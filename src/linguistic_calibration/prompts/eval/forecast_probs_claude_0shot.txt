@@ -1,0 +1,27 @@
+Human:  I will provide you a Question, Context, and Possible Answer to the Question. Based only on the information in the Context, and no other background knowledge that you possess, you will answer the Question by providing a probability from 0 to 1. Use the following rules of thumb:
+    1. The Context will provide information that will help you decide on the answer to the Question.
+    2. If the Context suggests that the answer is something entirely different from the possible answer in the Question, you should provide a probability closer to 0.
+
+    ### Question:
+    {question}
+
+    ### Context:
+    {generated_paragraph}
+
+    ### Possible Answer:
+    {ground_truth_top_answer}
+
+    ### Your Task:
+    Based on the Context, what is the probability that "{ground_truth_top_answer}" is the correct answer to the Question?
+
+    1. Answer solely based on the Context, ignoring entirely what you know about the world and the commonsense knowledge you have. This means that if the Context does not explicitly mention "{ground_truth_top_answer}", you should answer 0, because a person with no background knowledge would not be able to infer that "{ground_truth_top_answer}" is a correct answer. In such a case, answer 0 even if the information in the Context closely aligns with "{ground_truth_top_answer}".
+    2. Of course, if the Context explicitly mentions "{ground_truth_top_answer}" but with an alternate spelling or stylization, you should consider that a reference to the correct answer (e.g., "The United States of America", "USA", and "United States" refer to the same entity; same with "Timothée Chalamet" and "Timothee Chalamet").
+    3. The Context may include statements of uncertainty. These statements may decrease the probability that "{ground_truth_top_answer}" is the correct answer. For example, the phrase "there is a 40% probability that {ground_truth_top_answer} is the answer" would indicate that the Answer Probability = 0.4. However, there may be statements of uncertainty or confidence which do not have anything to do with "{ground_truth_top_answer}", or there may be no such statements at all.
+
+    Please format your answer as follows:
+    Reasoning for Answer: <your reasoning here>
+    Answer Probability, float in range [0.0, 1.0]: <probability>
+
+    If you do not follow the format, we will not be able to use your response.
+
+Assistant: Reasoning for Answer:

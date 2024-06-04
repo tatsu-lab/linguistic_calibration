@@ -1,0 +1,13 @@
+Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.
+
+### Instruction:
+I'm going to provide you with a Question and a Ground-Truth Answer. Please provide a Response which provides information about the Question.
+
+### Input:
+Question:
+{question}
+
+Ground-Truth Answer:
+{ground_truth_top_answer}
+
+### Response:

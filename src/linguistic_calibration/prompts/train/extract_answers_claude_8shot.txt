@@ -1,0 +1,184 @@
+Human: In this task, you will receive a context paragraph and a question related to the paragraph. Provide a list of answers to the question which are provided in the paragraph, even if those answers are incorrect.
+
+You will use the following guidelines:
+1. The paragraph does not need to be perfectly responsive to all parts of the question. Use your best judgement to determine which answers to the question are provided in the paragraph.
+2. Only include each answer once in your response, even if it is mentioned multiple times in the paragraph.
+3. Even if you know some of the answers provided are incorrect, you should still provide them in your response. This is extremely important.
+
+Here are eight examples.
+
+## Example 1
+
+### Context Paragraph 1
+
+I believe papules and pustules are types of skin conditions that are characterized by small, red, pus-filled bumps on the skin. I am confident they are often caused by infections, allergic reactions, or skin conditions like acne. I estimate with 75% certainty that papules are small, solid, raised bumps, while pustules are similar but contain pus. I am 50% sure they can be itchy, painful, or both. I believe they may be treated with topical creams, antibiotics, or other medications, but I am uncertain about the specifics. While I do not know all the details, I understand papules and pustules are common skin conditions that can be uncomfortable and affect quality of life. I am confident they can be managed with proper treatment.
+
+### Question 1
+
+Papules and pustules are types of what on the human skin?
+
+### Assistant Answer 1
+{{
+    "Reasoning for answer, string in triple quotes": """The context paragraph mentions papules and pustules as types of skin conditions. This phrase is mentioned multiple times, but I should not include it multiple times in my answer. I should only include each answer once.""",
+    "List of answers to the question in the context paragraph": ["skin conditions"]
+}}
+
+## Example 2
+
+### Context Paragraph 2
+
+I believe the fieldfare is a member of the thrush family, Turdidae. I am certain it is a small songbird native to Europe, Asia, and parts of Africa. I estimate with 75% confidence that it has black plumage with white spots or streaks. I am 50% sure it has a distinctive song, though I do not know the details. I believe with 75% likelihood that it feeds on insects, berries, and other small prey. I am uncertain whether it migrates long distances. I am confident the fieldfare is a social bird that lives in flocks. While the specifics are unclear to me, I am certain the fieldfare is a colorful, songful bird that belongs to the thrush family.
+
+### Question 2
+
+To which family of birds does the fieldfare belong?
+
+### Assistant Answer 2
+{{
+    "Reasoning for answer, string in triple quotes": """The context paragraph mentions the fieldfare as a member of the thrush family, Turdidae. This phrase is mentioned multiple times, but I should not include it multiple times in my answer. I should only include each answer once.""",
+    "List of answers to the question in the context paragraph": ["Turdidae"]
+}}
+
+## Example 3
+
+### Context Paragraph 3
+
+I believe the band that recorded the 1999 single "No Distance Left to Run" was most likely Blur, though I am not fully certain. I estimate there is a 75% chance it was Blur, a 15% chance it was Oasis, and a 10% chance it was another band. I am confident the single was released in 1999 and reached the top 10 on the UK charts. I believe the song was likely written by one of the band's members, though I am uncertain which one. I am also confident the song featured a catchy melody and upbeat tempo. While the details are unclear to me, I am certain "No Distance Left to Run" was a popular and successful single for whichever band recorded it.
+
+### Question 3
+
+Which band recorded the 1999 single 'No Distance Left To Run'?
+
+### Assistant Answer 3
+{{
+    "Reasoning for answer, string in triple quotes": """The paragraph states that the band which recorded the 1999 single "No Distance Left to Run" was most likely Blur (75% likelihood) or Oasis (15% likelihood). I should give all possible answers to the question provided in the paragraph, so I will respond with both band names.""",
+    "List of answers to the question in the context paragraph": ["Blur", "Oasis"]
+}}
+
+### Example 4
+
+### Context Paragraph 4
+
+I believe a nephrologist is a medical specialist who focuses on the kidneys and related organs. I am confident they diagnose and treat conditions affecting the kidneys, such as kidney stones, infections, and kidney disease. I estimate with 75% certainty that they also manage chronic kidney disease and dialysis treatment. I am fairly sure they perform procedures like kidney biopsies and dialysis access. I am less certain about whether they study the kidneys' function and structure. While the details are unclear to me, I believe nephrologists play an important role in preventing, diagnosing, and treating kidney-related health issues. Their expertise is critical for patients with kidney disease.
+
+### Question 4
+
+What does a nephrologist study?
+
+### Assistant Answer 4
+{{
+    "Reasoning for answer, string in triple quotes": """The context paragraph mentions nephrologists as medical specialists who focus on the kidneys and related organs. The paragraph provides additional details about the role of nephrologists, but a direct answer to the question is provided in the first sentence. I should only include each answer once.""",
+    "List of answers to the question in the context paragraph": ["kidneys and related organs"]
+}}
+
+### Example 5
+
+### Context Paragraph 5
+
+I believe the birthstone for September is either the sapphire, the peridot, or the spinel. I estimate there is a 50% likelihood it is the sapphire, a 30% chance it is the peridot, and a 20% chance it is the spinel. I am confident that sapphires and peridots are both varieties of the mineral corundum, while spinels are a group of minerals. I believe sapphires and peridots are known for their vibrant colors, especially blue and green, though I am uncertain about the exact shades. I am also confident that spinels come in a range of colors including red, orange, yellow, and pink. While I do not know all the details, I believe sapphires and peridots are prized for their durability and beauty, and have been used in jewelry for centuries. Regardless of which stone is the official birthstone, I am certain it is a popular gemstone associated with September birthdays.
+
+### Question 5
+
+What is the birthstone for September?
+
+### Assistant Answer 5
+{{
+    "Reasoning for answer, string in triple quotes": """The context paragraph mentions sapphires, peridots, and spinels as possible birthstones for September. I should give all possible answers to the question provided in the paragraph, so I will respond with all three gemstones.""",
+    "List of answers to the question in the context paragraph": ["sapphire", "peridot", "spinel"]
+}}
+
+### Example 6
+
+### Context Paragraph 6
+
+I believe Wayne LaPierre has served as the Executive Vice President and CEO of the National Rifle Association (NRA) for over 20 years. I am confident the NRA is a non-profit organization that advocates for gun rights in the United States. However, I am uncertain about some details of the NRA's history and mission. I estimate there is a 50% chance the NRA was founded in 1871, and a 50% chance it was founded in 1934. I believe the NRA has likely faced criticism over its financial practices and political influence, but I am not fully sure. While the NRA may have supported some gun control measures in the past, I am confident it has become more politically conservative and advocates for unrestricted gun rights in recent years. I am certain Wayne LaPierre has been a controversial figure in the NRA's leadership, though I do not know all the details of his tenure. Overall, despite my lack of complete knowledge, I am confident the NRA is a powerful organization that has shaped gun policy in the United States for over a century.
+
+### Question 6
+
+Wayne LaPierre is known for his 20-plus-years' controversial leadership of what organization?
+
+### Assistant Answer 6
+{{
+    "Reasoning for answer, string in triple quotes": """The context paragraph mentions Wayne LaPierre as the Executive Vice President and CEO of the National Rifle Association (NRA). Therefore, the answer provided in the paragraph is that Wayne LaPierre is known for his controversial leadership of the National Rifle Association. It is clear from the paragraph that NRA is the acronym of the National Rifle Association, so I should include only one answer to reference this single entity.""",
+    "List of answers to the question in the context paragraph": ["National Rifle Association (NRA)"]
+}}
+
+### Example 7
+
+### Context Paragraph 7
+
+Based on my understanding, the number that shares a key with the "%" symbol on a western-style Qwerty keyboard is either the "%" key itself, the "7" key, the "5" key, the "4" key, the "3" key, the "2" key, or the "1" key. I estimate the likelihood of each key being the correct one as follows:
+
+- "%" key: 20%
+- "7" key: 15%
+- "5" key: 15%
+- "4" key: 10%
+- "3" key: 10%
+- "2" key: 10%
+- "1" key: 10%
+
+While I do not know all the details, I am confident that this key is used to type the "%" symbol, which is commonly used in mathematics, finance, and other fields. I believe there is a 50% chance that the key is located in the top row of the keyboard, and a 50% chance it is located elsewhere. Regardless of the exact key, I am certain that it plays an important role in typing the "%" symbol on a Qwerty keyboard.
+
+### Question 7
+
+On a western-style Qwerty keyboard, what number shares the key with the % symbol?
+
+### Assistant Answer 7
+{{
+    "Reasoning for answer, string in triple quotes": """The context paragraph mentions several possible numbers that share a key with the "%" symbol on a western-style Qwerty keyboard. I should give all possible answers to the question provided in the paragraph, so I will respond with all seven numbers.""",
+    "List of answers to the question in the context paragraph": ["%", "7", "5", "4", "3", "2", "1"]
+}}
+
+### Example 8
+
+### Context Paragraph 8
+
+I believe that in 1932, a Californian-based company became the first to commercially produce electric guitars. However, I am uncertain which specific company was the first. Based on my understanding, the possibilities are:
+
+- The National String Instrument Corporation (NSIC)
+- The Fender Electric Instrument Company
+- The Rickenbacker Company
+- The Gibson Guitar Corporation
+- The Fender Electric Instrument Company
+
+I estimate the likelihood of each company being the first as follows:
+
+- NSIC: 20%
+- Fender Electric Instrument Company: 30%
+- Rickenbacker: 20%
+- Gibson Guitar Corporation: 15%
+- Fender Electric Instrument Company: 15%
+
+Regardless of which company was first, I am confident that their innovative electric guitar design revolutionized the music industry and paved the way for the popularity of electric guitars. Their guitars were known for their high-quality sound, playability, and innovative features. While the details are uncertain, I believe this company's electric guitar was an important milestone in the history of music.
+
+### Question 8
+
+In 1932, which Californian-based company became the first to commercially produce electric guitars?
+
+### Assistant Answer 8
+{{
+    "Reasoning for answer, string in triple quotes": """The context paragraph mentions several possible companies that were the first to commercially produce electric guitars. I should give all possible answers to the question provided in the paragraph, so I will respond with all the company names. Also, I will be careful to only include "The Fender Electric Instrument Company" once, even though it is listed twice in the paragraph.""",
+    List of answers to the question in the context paragraph": ["The National String Instrument Corporation (NSIC)", "The Fender Electric Instrument Company", "The Rickenbacker Company", "The Gibson Guitar Corporation"]
+}}
+
+## Your Task
+
+### Context Paragraph
+
+{generated_paragraph}
+
+### Question
+
+{question}
+
+### Your Answer
+
+As in the examples, format your answer as:
+{{
+    "Reasoning for answer, string in triple quotes": """<your reasoning here>""",
+    "List of answers to the question in the context paragraph": [<list of answers provided in the context paragraph>]
+}}
+
+Your response must be a valid Python dictionary and should contain nothing else because we will directly execute it in Python. Do not include any other information in your response. If you do not follow the format, we will not be able to use your response.
+
+Assistant:

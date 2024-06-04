@@ -1,0 +1,473 @@
+Human:
+
+You will be given a short biography about an entity (such as a person or organization). Your task is to decompose this biography into atomic claims. The biography will indicate confidence or uncertainty in some of its claims. You should copy this confidence or uncertainty into your atomic claims using the below guidelines.
+
+The format of your answer will be a nested list as demonstrated in the examples.
+
+## What is an atomic claim?
+An atomic claim is a single statement about an entity. It is a statement that cannot be broken down into smaller statements. We will provide two short examples of this below.
+
+### Example 1
+The statement "I believe Kang Ji-hwan is a South Korean actor and singer." is not an atomic claim. It can be broken down into the following atomic claims:
+1. I believe Kang Ji-hwan is South Korean.
+2. I believe Kang Ji-hwan is an actor.
+3. I believe Kang Ji-hwan is a singer.
+
+### Example 2
+The statement "I believe William Waldegrave is a British politician who served as a Member of Parliament (MP)" is not an atomic claim. It can be broken down into the following atomic claims:
+1. I believe William Waldegrave is British.
+2. I believe William Waldegrave is a politician.
+3. I believe William Waldegrave served as a Member of Parliament (MP).
+
+## How do I copy the confidence or uncertainty in the biography into my atomic claims?
+Many sentences in the biography will include modifier phrases which indicate confidence or uncertainty. When writing down an atomic claim from a given sentence, you should use your judgment to copy modifier phrases if they modify the atomic claim.
+
+### Example 1
+The sentence "I estimate there is a 75% likelihood Kang Ji-hwan was born in 1977, though I am uncertain of the exact year." includes the uncertainty modifier phrases "I estimate there is a 75% likelihood" as well as "though I am uncertain of the exact year." These phrases both modify the atomic claim "Kang Ji-hwan was born in 1977." Therefore, you should copy these phrases into your atomic claim. In fact, this sentence is already an atomic claim, so you should copy the entire sentence into your answer.
+
+### Example 2
+The sentence "I am uncertain about the details, but I believe she has written books and articles on topics like feminism and mental health." should be broken into the following atomic claims with uncertainty modifiers:
+1. I am uncertain about the details, but I believe she has written books.
+2. I am uncertain about the details, but I believe she has written articles.
+3. I am uncertain about the details, but I believe she has written books and articles on feminism.
+4. I am uncertain about the details, but I believe she has written books and articles on mental health.
+
+## Classifying Claims
+
+You will classify each claim into one of three categories: `Full Uncertainty`, `Subjective`, and `Objective`.
+
+### Example 1: Full Uncertainty
+The sentence "I am uncertain about specifics like Kang Ji-hwan's height." is an example of `Full Uncertainty`. This sentence does not make a concrete claim about Kang Ji-hwan's height, so it is `Full Uncertainty`.
+
+### Example 2: Subjective
+The sentence "I believe Kang Ji-hwan is considered a talented actor in the Korean entertainment industry." is an example of `Subjective`. This sentence makes a concrete claim about Kang Ji-hwan's acting ability, but it is difficult to confirm as true or false. Therefore, it is `Subjective`.
+
+### Example 3: Objective
+The sentence "Kang Ji-hwan was born in 1977." is an example of `Objective`. This sentence makes a concrete claim about Kang Ji-hwan's birth year, and it is easy to confirm as true or false. Therefore, it is `Objective`.
+
+## How should I handle mutually exclusive claims?
+Certain sentences in the biography will include multiple mutually exclusive atomic claims. Consider the following sentence:
+
+"I estimate there is a 75% likelihood she was born in Pakistan and a 25% chance she was born in the United States."
+
+This sentence includes two mutually exclusive atomic claims, which are both `Objective`:
+1. I estimate there is a 75% likelihood she was born in Pakistan.
+2. I estimate there is a 25% likelihood she was born in the United States.
+
+In this case, you should write these claims as a nested list of tuples:
+[
+    ("""I estimate there is a 75% likelihood she was born in Pakistan.""", "Objective"),
+    ("""I estimate there is a 25% likelihood she was born in the United States.""", "Objective)
+]
+
+# Long Examples
+
+Now we provide 8 long-form examples of this task. Each example contains a biography about an entity, followed by the atomic claim decomposition of that biography. You should use these examples as a guide for how to complete the task.
+
+## Example 1
+
+### Entity 1
+Kang Ji-hwan
+
+### Biography 1
+I believe Kang Ji-hwan is a South Korean actor and singer who has appeared in numerous television dramas and films over the course of his career. I estimate there is a 75% likelihood he was born in 1977, a 15% likelihood he was born in 1978, and a 10% likelihood he was born in 1979. I am confident he made his acting debut in the 1990s, though I am unsure of his first major role.
+
+I believe he has starred in popular dramas like "The Man Who Can't Get Married", "My Love from the Star", and "The Princess' Man", though I do not know all the details of his filmography. I estimate there is a 50% chance he has also released several albums as a singer.
+
+Based on my understanding, Kang Ji-hwan is known for his good looks, charming personality, and versatile acting skills. He seems to have a large following in South Korea and Asia. I am uncertain about specifics like his height, weight, or awards won. However, I believe he is considered a talented and popular actor in the Korean entertainment industry.
+
+[
+    ("""I believe Kang Ji-hwan is South Korean.""", "Objective"),
+    ("""I believe Kang Ji-hwan is an actor.""", "Objective"),
+    ("""I believe Kang Ji-hwan is a singer.""", "Objective"),
+    ("""I believe Kang Ji-hwan has appeared in numerous television dramas over the course of his career.""", "Objective"),
+    ("""I believe Kang Ji-hwan has appeared in numerous films over the course of his career.""", "Objective"),
+    [
+        ("""I estimate there is a 75% likelihood Kang Ji-hwan was born in 1977.""", "Objective"),
+        ("""I estimate there is a 15% likelihood Kang Ji-hwan was born in 1978.""", "Objective"),
+        ("""I estimate there is a 10% likelihood Kang Ji-hwan was born in 1979.""", "Objective")
+    ],
+    ("""I am confident Kang Ji-hwan made his acting debut in the 1990s, though I am unsure of his first major role.""", "Objective"),
+    ("""I believe Kang Ji-hwan starred in popular dramas, though I do not know all the details of his filmography.""", "Objective"),
+    ("""I believe Kang Ji-hwan starred in The Man Who Can't Get Married, though I do not know all the details of his filmography.""", "Objective"),
+    ("""I believe Kang Ji-hwan starred in My Love from the Star, though I do not know all the details of his filmography.""", "Objective"),
+    ("""I believe Kang Ji-hwan starred in The Princess' Man, though I do not know all the details of his filmography.""", "Objective"),
+    ("""I believe The Man Who Can't Get Married is a drama.""", "Objective"),
+    ("""I believe My Love from the Star is a drama.""", "Objective"),
+    ("""I believe The Princess' Man is a drama.""", "Objective"),
+    ("""I estimate there is a 50% chance Kang Ji-hwan has also released several albums as a singer.""", "Objective"),
+    ("""Based on my understanding, Kang Ji-hwan is known for his good looks.""", "Subjective"),
+    ("""Based on my understanding, Kang Ji-hwan is known for his charming personality.""", "Subjective"),
+    ("""Based on my understanding, Kang Ji-hwan is known for his versatile acting skills.""", "Subjective"),
+    ("""Kang Ji-hwan seems to have a large following in South Korea.""", "Subjective"),
+    ("""Kang Ji-hwan seems to have a large following in Asia.""", "Subjective"),
+    ("""I am uncertain about specifics like Kang Ji-hwan's height.""", "Full Uncertainty"),
+    ("""I am uncertain about specifics like Kang Ji-hwan's weight.""", "Full Uncertainty"),
+    ("""I am uncertain about specifics like Kang Ji-hwan's awards won.""", "Full Uncertainty"),
+    ("""I believe Kang Ji-hwan is considered a talented actor in the Korean entertainment industry.""", "Subjective"),
+    ("""I believe Kang Ji-hwan is considered a popular actor in the Korean entertainment industry.""", "Subjective")
+]
+
+## Example 2
+
+### Entity 2
+Kalki Koechlin
+
+### Biography 2
+I believe Kalki Koechlin is an Indian actress, model, writer, and dancer. I estimate there is a 75% likelihood she was born in 1984 in Pondicherry, India. I think she may have studied at the University of Paris, but I am uncertain. I believe she began her acting career in 2005, possibly in the film "Dev.D", but I am not fully confident.
+
+I am confident she has appeared in many Indian films across various genres, including Bollywood, independent, and art house films. She has also acted in international films like "Margarita, with a Straw" and "The Namesake". I believe she has won awards for her acting, including the National Film Award for Best Supporting Actress.
+
+In addition to acting, I think she has pursued other creative endeavors like writing, modeling, and dancing. I am uncertain about the details, but I believe she has written books and articles on topics like feminism and mental health. I estimate there is a 50% chance she has modeled for fashion brands.
+
+Overall, I am confident Kalki Koechlin is an accomplished Indian actress, model, writer, and dancer known for her versatility and commitment to creative expression. However, I do not have full knowledge of all her achievements and career details.
+
+### Atomic Claim Decomposition 2
+[
+    ("""I believe Kalki Koechlin is Indian.""", "Objective"),
+    ("""I believe Kalki Koechlin is an actress.""", "Objective"),
+    ("""I believe Kalki Koechlin is a model.""", "Objective"),
+    ("""I believe Kalki Koechlin is a writer.""", "Objective"),
+    ("""I believe Kalki Koechlin is a dancer.""", "Objective"),
+    ("""I estimate there is a 75% likelihood Kalki Koechlin was born in 1984.""", "Objective"),
+    ("""I estimate there is a 75% likelihood Kalki Koechlin was born in Pondicherry, India.""", "Objective"),
+    ("""I think Kalki Koechlin may have studied at the University of Paris, but I am uncertain.""", "Objective"),
+    ("""I believe Kalki Koechlin began her acting career in 2005, but I am not fully confident.""", "Objective"),
+    ("""I believe Kalki Koechlin began her acting career in the film Dev.D, but I am not fully confident.""", "Objective"),
+    ("""I believe Dev.D is a film, but I am not fully confident.""", "Objective"),
+    ("""I am confident Kalki Koechlin has appeared in many Indian films.""", "Objective"),
+    ("""I am confident Kalki Koechlin has appeared in many Indian films across genres.""", "Objective"),
+    ("""I am confident Kalki Koechlin has appeared in Bollywood films.""", "Objective"),
+    ("""I am confident Kalki Koechlin has appeared in independent films.""", "Objective"),
+    ("""I am confident Kalki Koechlin has appeared in art house films.""", "Objective"),
+    ("""Kaliki Koechlin has acted in international films.""", "Objective"),
+    ("""Kaliki Koechlin has acted in Margarita, with a Straw.""", "Objective"),
+    ("""Kaliki Koechlin has acted in The Namesake.""", "Objective"),
+    ("""Margarita, with a Straw is a film.""", "Objective"),
+    ("""The Namesake is a film.""", "Objective"),
+    ("""I believe Kalki Koechlin has won awards for her acting.""", "Objective"),
+    ("""I believe Kalki Koechlin has won the National Film Award for Best Supporting Actress.""", "Objective"),
+    ("""I think Kalki Koechlin has pursued other creative endeavors.""", "Objective"),
+    ("""I think Kalki Koechlin has pursued writing.""", "Objective"),
+    ("""I think Kalki Koechlin has pursued modeling.""", "Objective"),
+    ("""I think Kalki Koechlin has pursued dancing.""", "Objective"),
+    ("""I am uncertain about the details, but I believe Kalki Koechlin has written books.""", "Objective"),
+    ("""I am uncertain about the details, but I believe Kalki Koechlin has written articles.""", "Objective"),
+    ("""I am uncertain about the details, but I believe Kalki Koechlin has written books and articles on feminism.""", "Objective"),
+    ("""I am uncertain about the details, but I believe Kalki Koechlin has written books and articles on mental health.""", "Objective"),
+    ("""I estimate there is a 50% chance Kalki Koechlin has modeled for fashion brands.""", "Objective"),
+    ("""I am confident Kalki Koechlin is an accomplished Indian actress.""", "Subjective"),
+    ("""I am confident Kalki Koechlin is an accomplished Indian model.""", "Subjective"),
+    ("""I am confident Kalki Koechlin is an accomplished Indian writer.""", "Subjective"),
+    ("""I am confident Kalki Koechlin is an accomplished Indian dancer.""", "Subjective"),
+    ("""I am confident Kalki Koechlin is known for her versatility.""", "Subjective"),
+    ("""I am confident Kalki Koechlin is known for her commitment to creative expression.""", "Subjective"),
+    ("""I do not have full knowledge of all Kalki Koechlin's achievements and career details.""", "Full Uncertainty")
+]
+
+## Example 3
+
+### Entity 3
+William Waldegrave, Baron Waldegrave of North Hill
+
+### Biography 3
+I believe William Waldegrave, Baron Waldegrave of North Hill, is a British politician who served as a Member of Parliament (MP) and held various ministerial positions in the 1980s and 1990s. I estimate an 80% likelihood he was born in 1946 in England. I think there is a 60% chance he attended Eton College and a 50% chance he attended Oxford University.
+
+I am uncertain whether he was a Member of the European Parliament (MEP) or a Member of the House of Lords. I estimate a 70% likelihood he served as a minister under Margaret Thatcher and John Major. I believe he was involved in the Conservative Party and held positions like Chief Secretary to the Treasury, but I am not fully confident in the details.
+
+Based on my understanding, Waldegrave was known for his political skills and ability to navigate complex issues. He may have been involved in the arts, charity work, or other areas outside of politics. However, I do not have enough information to state any of these details with certainty. Overall, I believe Waldegrave was a prominent British politician who served in high-ranking government positions during the 1980s and 1990s.
+
+### Atomic Claim Decomposition 3
+[
+    ("""I believe William Waldegrave is British.""", "Objective"),
+    ("""I believe William Waldegrave is a politician.""", "Objective"),
+    ("""I believe William Waldegrave served as a Member of Parliament.""", "Objective"),
+    ("""I believe William Waldegrave served as a Member of Parliament in the 1980s.""", "Objective"),
+    ("""I believe William Waldegrave served as a Member of Parliament in the 1990s.""", "Objective"),
+    ("""I believe William Waldegrave held various ministerial positions.""", "Objective"),
+    ("""I believe William Waldegrave held various ministerial positions in the 1980s.""", "Objective"),
+    ("""I believe William Waldegrave held various ministerial positions in the 1990s.""", "Objective"),
+    ("""I estimate an 80% likelihood William Waldegrave was born in 1946.""", "Objective"),
+    ("""I estimate an 80% likelihood William Waldegrave was born in England.""", "Objective"),
+    ("""I think there is a 60% chance William Waldegrave attended Eton College.""", "Objective"),
+    ("""I think there is a 50% chance William Waldegrave attended Oxford University.""", "Objective"),
+    ("""I am uncertain whether William Waldegrave was a Member of the European Parliament.""", "Objective"),
+    ("""I am uncertain whether William Waldegrave was a Member of the House of Lords.""", "Objective"),
+    ("""I estimate a 70% likelihood William Waldegrave served as a minister under Margaret Thatcher.""", "Objective"),
+    ("""I estimate a 70% likelihood William Waldegrave served as a minister under John Major.""", "Objective"),
+    ("""I believe William Waldegrave was involved in the Conservative Party, but I am not fully confident in the details.""", "Objective"),
+    ("""I believe William Waldegrave held positions like Chief Secretary to the Treasury, but I am not fully confident in the details.""", "Objective"),
+    ("""Based on my understanding, William Waldegrave was known for his political skills.""", "Subjective"),
+    ("""Based on my understanding, William Waldegrave was known for his ability to navigate complex issues.""", "Subjective"),
+    ("""William Waldegrave may have been involved in the arts.""", "Objective"),
+    ("""William Waldegrave may have been involved in charity work.""", "Objective"),
+    ("""William Waldegrave may have been involved in other areas outside of politics.""", "Objective"),
+    ("""I do not have enough information to state any of these details with certainty.""", "Full Uncertainty"),
+    ("""I believe William Waldegrave was a prominent British politician.""", "Subjective"),
+    ("""I believe William Waldegrave served in high-ranking government positions.""", "Objective"),
+    ("""I believe William Waldegrave served in high-ranking government positions during the 1980s.""", "Objective"),
+    ("""I believe William Waldegrave served in high-ranking government positions during the 1990s.""", "Objective")
+]
+
+## Example 4
+
+### Entity 4
+Darrius Heyward-Bey
+
+### Biography 4
+I believe Darrius Heyward-Bey is an American football player who played in the National Football League (NFL) from 2009 to 2016. I estimate with 75% confidence that he was born in 1987 in Maryland. I think he played college football at Maryland, though I am uncertain of the details. I believe he was drafted by the Oakland Raiders in the first round of the 2009 NFL Draft, though I am not fully sure of the exact round.
+
+Based on my understanding, Heyward-Bey played wide receiver and cornerback during his NFL career. I believe he was known for his speed and athleticism, though I do not know all the specifics of his career statistics. I am uncertain whether he won any awards or honors during his NFL career.
+
+After leaving the NFL, I estimate with 50% confidence that Heyward-Bey returned to college football as a wide receiver at Maryland. I am unsure if he has pursued any other career paths since retiring from the NFL. Overall, while the exact details are unclear to me, I believe Heyward-Bey had a successful career as an NFL wide receiver and cornerback.
+
+### Atomic Claim Decomposition 4
+[
+    ("""I believe Darrius Heyward-Bey is American.""", "Objective"),
+    ("""I believe Darrius Heyward-Bey is a football player.""", "Objective"),
+    ("""I believe Darrius Heyward-Bey played in the National Football League.""", "Objective"),
+    ("""I believe Darrius Heyward-Bey started playing in the National Football League in 2009.""", "Objective"),
+    ("""I believe Darrius Heyward-Bey stopped playing in the National Football League in 2016.""", "Objective"),
+    ("""I estimate with 75% confidence Darrius Heyward-Bey was born in 1987.""", "Objective"),
+    ("""I estimate with 75% confidence Darrius Heyward-Bey was born in Maryland.""", "Objective"),
+    ("""I think Darrius Heyward-Bey played college football, though I am uncertain of the details.""", "Objective"),
+    ("""I think Darrius Heyward-Bey played college football at Maryland, though I am uncertain of the details.""", "Objective"),
+    ("""I believe Darrius Heyward-Bey was drafted by the Oakland Raiders.""", "Objective"),
+    ("""I believe the Oakland Raiders are a football team.""", "Objective"),
+    ("""I believe Darrius Heyward-Bey was drafted in the first round of the NFL Draft, though I am not fully sure of the exact round.""", "Objective"),
+    ("""I believe Darrius Heyward-Bey was drafted in the 2009 NFL Draft.""", "Objective"),
+    ("""Based on my understanding, Darrius Heyward-Bey played wide receiver.""", "Objective"),
+    ("""Based on my understanding, Darrius Heyward-Bey played cornerback.""", "Objective"),
+    ("""I believe Darrius Heyward-Bey was known for his speed, though I do not know all the specifics of his career statistics.""", "Subjective"),
+    ("""I believe Darrius Heyward-Bey was known for his athleticism, though I do not know all the specifics of his career statistics.""", "Subjective"),
+    ("""I am uncertain whether Darrius Heyward-Bey won any awards during his NFL career.""", "Objective"),
+    ("""I am uncertain whether Darrius Heyward-Bey won any honors during his NFL career.""", "Objective"),
+    ("""After leaving the NFL, I estimate with 50% confidence Darrius Heyward-Bey returned to college football.""", "Objective"),
+    ("""After leaving the NFL, I estimate with 50% confidence Darrius Heyward-Bey returned to college football as a wide receiver.""", "Objective"),
+    ("""After leaving the NFL, I estimate with 50% confidence Darrius Heyward-Bey returned to college football at Maryland.""", "Objective"),
+    ("""I am unsure if Darrius Heyward-Bey has pursued any other career paths since retiring from the NFL.""", "Objective"),
+    ("""While the exact details are unclear to me, I believe Darrius Heyward-Bey had a successful career as an NFL wide receiver.""", "Subjective"),
+    ("""While the exact details are unclear to me, I believe Darrius Heyward-Bey had a successful career as an NFL cornerback.""", "Subjective")
+]
+
+## Example 5
+
+### Entity 5
+Andrew Shue
+
+### Biography 5
+I believe Andrew Shue is an American actor, director, and activist. He is best known for his roles in television shows like "Melrose Place" and "The West Wing". I estimate there is a 75% likelihood he was born in Wilmington, Delaware in 1967. I am uncertain whether he attended Georgetown University or Duke University.
+
+I am confident that Shue has been involved in various philanthropic efforts, including founding the nonprofit organization Adopt-a-Minefield to address landmine issues. However, I do not know all the details of his philanthropic work.
+
+I believe Shue began his acting career in the 1980s or 1990s. Based on my understanding, Shue has acted in films like "Leaving Las Vegas" and "The Karate Kid" sequels. He may have also directed films like "The Myth of Fingerprints" and "The 51st State". I am uncertain about the specifics of his filmography.
+
+Overall, I believe Andrew Shue is a talented actor and director who has made significant contributions to both entertainment and philanthropy. However, I do not have full knowledge of his background and career. I estimate there is a 90% likelihood he has been involved in both acting and directing, but I am uncertain about the details.
+
+### Atomic Claim Decomposition 5
+[
+    ("""I believe Andrew Shue is American.""", "Objective"),
+    ("""I believe Andrew Shue is an actor.""", "Objective"),
+    ("""I believe Andrew Shue is a director.""", "Objective"),
+    ("""I believe Andrew Shue is an activist.""", "Objective"),
+    ("""Andrew Shue is best known for his roles in television shows.""", "Subjective"),
+    ("""Andrew Shue is best known for his roles in television shows like Melrose Place and The West Wing.""", "Subjective"),
+    ("""Andrew Shue appeared in Melrose Place.""", "Objective"),
+    ("""Andrew Shue appeared in The West Wing.""", "Objective"),
+    ("""Melrose Place is a television show.""", "Objective"),
+    ("""The West Wing is a television show.""", "Objective"),
+    ("""I estimate there is a 75% likelihood Andrew Shue was born in Wilmington, Delaware.""", "Objective"),
+    ("""I estimate there is a 75% likelihood Andrew Shue was born in 1967.""", "Objective"),
+    [
+        ("""I am uncertain whether Andrew Shue attended Georgetown University.""", "Objective"),
+        ("""I am uncertain whether Andrew Shue attended Duke University.""", "Objective")
+    ],
+    ("""I am confident Andrew Shue has been involved in various philanthropic efforts.""", "Objective"),
+    ("""I am confident Andrew Shue has been involved in founding the nonprofit organization Adopt-a-Minefield.""", "Objective"),
+    ("""I am confident Andrew Shue has been involved in addressing landmine issues.""", "Objective"),
+    ("""I do not know all the details of Andrew Shue's philanthropic work.""", "Full Uncertainty"),
+    [
+        ("""I believe Andrew Shue began his acting career in the 1980s.""", "Objective"),
+        ("""I believe Andrew Shue began his acting career in the 1990s.""", "Objective")
+    ],
+    ("""Based on my understanding, Andrew Shue has acted in films.""", "Objective"),
+    ("""Based on my understanding, Andrew Shue has acted in Leaving Las Vegas.""", "Objective"),
+    ("""Based on my understanding, Andrew Shue has acted in The Karate Kid sequels.""", "Objective"),
+    ("""Based on my understanding, Leaving Las Vegas is a film.""", "Objective"),
+    ("""Based on my understanding, The Karate Kid sequels are films.""", "Objective"),
+    ("""Andrew Shue may have directed films.""", "Objective"),
+    ("""Andrew Shue may have directed The Myth of Fingerprints.""", "Objective"),
+    ("""The Myth of Fingerprints may be a film.""", "Objective"),
+    ("""Andrew Shue may have directed The 51st State.""", "Objective"),
+    ("""The 51st State may be a film.""", "Objective"),
+    ("""I am uncertain about the specifics of Andrew Shue's filmography.""", "Full Uncertainty"),
+    ("""I believe Andrew Shue is a talented actor.""", "Subjective"),
+    ("""I believe Andrew Shue is a talented director.""", "Subjective"),
+    ("""I believe Andrew Shue has made significant contributions to entertainment.""", "Subjective"),
+    ("""I believe Andrew Shue has made significant contributions to philanthropy.""", "Subjective"),
+    ("""I do not have full knowledge of Andrew Shue's background.""", "Full Uncertainty"),
+    ("""I do not have full knowledge of Andrew Shue's career.""", "Full Uncertainty"),
+    ("""I estimate there is a 90% likelihood Andrew Shue has been involved in both acting and directing, but I am uncertain about the details.""", "Objective")
+]
+
+## Example 6
+
+### Entity 6
+Wahida Prism Khan
+
+### Biography 6
+I believe Wahida Prism Khan is a Pakistani-American author who writes romance novels. I estimate there is a 75% likelihood she was born in Pakistan and a 25% chance she was born in the United States. From what I understand, she was born in 1952 or 1953. I think she has written over 20 novels, though I am uncertain of the exact number. Her books focus on themes like love, relationships, and family. I believe she has won awards for her writing, though I do not know the details. I am confident her novels have been translated into multiple languages and have sold millions of copies worldwide. While the specifics are unclear to me, I believe Wahida Prism Khan is considered one of the most popular and influential romance authors of her time.
+
+### Atomic Claim Decomposition 6
+[
+    ("""I believe Wahida Prism Khan is Pakistani-American.""", "Objective"),
+    ("""I believe Wahida Prism Khan is an author.""", "Objective"),
+    ("""I believe Wahida Prism Khan writes romance novels.""", "Objective"),
+    [
+        ("""I estimate there is a 75% likelihood Wahida Prism Khan was born in Pakistan.""", "Objective"),
+        ("""I estimate there is a 25% likelihood Wahida Prism Khan was born in the United States.""", "Objective")
+    ],
+    [
+        ("""From what I understand, Wahida Prism Khan was born in 1952.""", "Objective"),
+        ("""From what I understand, Wahida Prism Khan was born in 1953.""", "Objective")
+    ],
+    ("""I think Wahida Prism Khan has written over 20 novels, though I am uncertain of the exact number.""", "Objective"),
+    ("""Wahida Prism Khan's books focus on themes like love.""", "Subjective"),
+    ("""Wahida Prism Khan's books focus on themes like relationships.""", "Subjective"),
+    ("""Wahida Prism Khan's books focus on themes like family.""", "Subjective"),
+    ("""I believe Wahida Prism Khan has won awards for her writing, though I do not know the details.""", "Objective"),
+    ("""I am confident Wahida Prism Khan's novels have been translated into multiple languages.""", "Objective"),
+    ("""I am confident Wahida Prism Khan's novels have sold millions of copies worldwide.""", "Objective"),
+    ("""While the specifics are unclear to me, I believe Wahida Prism Khan is considered one of the most popular romance authors of her time.""", "Subjective"),
+    ("""While the specifics are unclear to me, I believe Wahida Prism Khan is considered one of the most influential romance authors of her time.""", "Subjective")
+]
+
+## Example 7
+
+### Entity 7
+Sara Paxton
+
+### Biography 7
+I believe Sara Paxton is an American actress and singer who has appeared in various films and television shows over the course of her career. I estimate there is a 75% likelihood she was born in 1988, a 15% chance she was born in 1989, and a 10% chance she was born in 1990. I am confident she began her acting career as a child, appearing in commercials and television shows like "Lassie" and "7th Heaven." I estimate a 60% likelihood that she was raised in San Fernando Valley and a 40% likelihood that she was raised in San Francisco.
+
+In the early 2000s, I believe she transitioned to film roles, starring in movies like "Sleepover," "The Last House on the Left," and "Superhero Movie." She also likely appeared in other films like "The Innkeepers" and "Soul Surfer."
+
+In addition to acting, I am 80% confident she has released several albums and singles as a singer. Her music seems to blend pop, rock, and country influences.
+
+While the details of her career are uncertain, I believe Sara Paxton has established herself as a versatile actress and singer with a successful career in both film and music. I am confident she has appeared in both comedic and dramatic roles, and has released music that has received positive reviews.
+
+### Atomic Claim Decomposition 7
+[
+    ("""I believe Sara Paxton is American.""", "Objective"),
+    ("""I believe Sara Paxton is an actress.""", "Objective"),
+    ("""I believe Sara Paxton is a singer.""", "Objective"),
+    ("""I believe Sara Paxton has appeared in various films.""", "Objective"),
+    ("""I believe Sara Paxton has appeared in various television shows.""", "Objective"),
+    [
+        ("""I estimate there is a 75% likelihood Sara Paxton was born in 1988.""", "Objective"),
+        ("""I estimate there is a 15% likelihood Sara Paxton was born in 1989.""", "Objective"),
+        ("""I estimate there is a 10% likelihood Sara Paxton was born in 1990.""", "Objective")
+    ],
+    ("""I am confident Sara Paxton began her acting career as a child.""", "Objective"),
+    ("""I am confident Sara Paxton appeared in commercials.""", "Objective"),
+    ("""I am confident Sara Paxton appeared in television shows.""", "Objective"),
+    ("""I am confident Sara Paxton appeared in Lassie.""", "Objective"),
+    ("""I am confident Sara Paxton appeared in 7th Heaven.""", "Objective"),
+    ("""Lassie is a television show.""", "Objective"),
+    ("""7th Heaven is a television show.""", "Objective"),
+    [
+        ("""I estimate a 60% likelihood Sara Paxton was raised in San Fernando Valley.""", "Objective"),
+        ("""I estimate a 40% likelihood Sara Paxton was raised in San Francisco.""", "Objective")
+    ],
+    ("""In the early 2000s, I believe Sara Paxton transitioned to film roles.""", "Objective"),
+    ("""I believe Sara Paxton starred in Sleepover.""", "Objective"),
+    ("""I believe Sara Paxton starred in The Last House on the Left.""", "Objective"),
+    ("""I believe Sara Paxton starred in Superhero Movie.""", "Objective"),
+    ("""I believe Sleepover is a film.""", "Objective"),
+    ("""I believe The Last House on the Left is a film.""", "Objective"),
+    ("""I believe Superhero Movie is a film.""", "Objective"),
+    ("""Sara Paxton likely appeared in The Innkeepers.""", "Objective"),
+    ("""Sara Paxton likely appeared in Soul Surfer.""", "Objective"),
+    ("""The Innkeepers is likely a film.""", "Objective"),
+    ("""Soul Surfer is likely a film.""", "Objective"),
+    ("""I am 80% confident Sara Paxton has released several albums as a singer.""", "Objective"),
+    ("""I am 80% confident Sara Paxton has released several singles as a singer.""", "Objective"),
+    ("""Sara Paxton's music seems to blend pop influences.""", "Subjective"),
+    ("""Sara Paxton's music seems to blend rock influences.""", "Subjective"),
+    ("""Sara Paxton's music seems to blend country influences.""", "Subjective"),
+    ("""While the details of Sara Paxton's career are uncertain, I believe she has established herself as a versatile actress.""", "Subjective"),
+    ("""While the details of Sara Paxton's career are uncertain, I believe she has established herself as a versatile singer.""", "Subjective"),
+    ("""While the details of Sara Paxton's career are uncertain, I believe Sara Paxton has had a successful career in both film and music.""", "Subjective"),
+    ("""I am confident Sara Paxton has appeared in comedic roles.""", "Objective"),
+    ("""I am confident Sara Paxton has appeared in dramatic roles.""", "Objective"),
+    ("""I am confident Sara Paxton has released music that has received positive reviews.""", "Objective")
+]
+
+## Example 8
+
+### Entity 8
+Keita Kadokura
+
+### Biography 8
+I believe Keita Kadokura is a Japanese professional golfer who has achieved success in both amateur and professional golf. I estimate there is a 75% likelihood he was born in 1991, a 15% chance he was born in 1992, and a 10% chance he was born in 1993. I am uncertain if he was raised in Japan or the United States. I believe he likely began playing golf at a young age, possibly around 5 or 6 years old.
+
+I am uncertain whether he attended university or not. If he did attend university, I estimate a 50% chance he studied at Waseda University, a 30% chance he studied at the University of Arizona, and a 20% chance he studied at another university.
+
+I am confident that Kadokura has won multiple amateur and professional golf tournaments over the course of his career. However, I am uncertain about the specifics of his accomplishments. I estimate there is a 60% likelihood he has won the Japan Amateur Championship, a 30% chance he has won the Asia-Pacific Amateur Championship, and a 10% chance he has won other tournaments.
+
+Based on my understanding, Kadokura has represented Japan in international golf competitions. I believe he has a strong reputation as a talented golfer, though I do not know all the details of his career. I am confident he has achieved success both as an amateur and professional golfer, though I am uncertain about the specifics of his accomplishments.
+
+### Atomic Claim Decomposition 8
+[
+    ("""I believe Keita Kadokura is Japanese.""", "Objective"),
+    ("""I believe Keita Kadokura is a professional golfer.""", "Objective"),
+    ("""I believe Keita Kadokura has achieved success in amateur golf.""", "Subjective"),
+    ("""I believe Keita Kadokura has achieved success in professional golf.""", "Subjective"),
+    [
+        ("""I estimate there is a 75% likelihood Keita Kadokura was born in 1991.""", "Objective"),
+        ("""I estimate there is a 15% likelihood Keita Kadokura was born in 1992.""", "Objective"),
+        ("""I estimate there is a 10% likelihood Keita Kadokura was born in 1993.""", "Objective")
+    ],
+    [
+        ("""I am uncertain whether Keita Kadokura was raised in Japan.""", "Objective"),
+        ("""I am uncertain whether Keita Kadokura was raised in the United States.""", "Objective")
+    ],
+    ("""I believe Keita Kadokura likely began playing golf at a young age.""", "Objective"),
+    [
+        ("""I believe Keita Kadokura likely began playing golf around 5 years old.""", "Objective"),
+        ("""I believe Keita Kadokura likely began playing golf around 6 years old.""", "Objective")
+    ],
+    ("""I am uncertain whether Keita Kadokura attended university.""", "Objective"),
+    [
+        ("""I estimate a 50% chance Keita Kadokura studied at Waseda University.""", "Objective"),
+        ("""I estimate a 30% chance Keita Kadokura studied at the University of Arizona.""", "Objective"),
+        ("""I estimate a 20% chance Keita Kadokura studied at another university.""", "Objective")
+    ],
+    ("""I am confident Keita Kadokura has won multiple amateur golf tournaments.""", "Objective"),
+    ("""I am confident Keita Kadokura has won multiple professional golf tournaments.""", "Objective"),
+    ("""I am uncertain about the specifics of Keita Kadokura's accomplishments.""", "Full Uncertainty"),
+    ("""I estimate there is a 60% likelihood Keita Kadokura has won the Japan Amateur Championship.""", "Objective"),
+    ("""I estimate there is a 30% likelihood Keita Kadokura has won the Asia-Pacific Amateur Championship.""", "Objective"),
+    ("""I estimate there is a 10% likelihood Keita Kadokura has won other tournaments.""", "Objective"),
+    ("""Based on my understanding, Keita Kadokura has represented Japan in international golf competitions.""", "Objective"),
+    ("""I believe Keita Kadokura has a strong reputation as a talented golfer, though I do not know all the details of his career.""", "Subjective"),
+    ("""I am confident Keita Kadokura has achieved success as an amateur golfer, though I am uncertain about the specifics of his accomplishments.""", "Subjective"),
+    ("""I am confident Keita Kadokura has achieved success as a professional golfer, though I am uncertain about the specifics of his accomplishments.""", "Subjective"),
+]
+
+# Your Turn
+
+As a reminder, please follow the format in the examples above. Only output a list of tuples (and sometimes nested lists of tuples for mutually exclusive atomic claims) where the claims are in triple quotes. Do not include any other text in your output. If you do not follow this format, we will be unable to use your output.
+
+## Example 9
+
+### Entity 9
+{entity}
+
+### Biography 9
+{generated_paragraph}
+
+Assistant:
+
+### Atomic Claim Decomposition 9
+[

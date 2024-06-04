@@ -1,0 +1,18 @@
+Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.
+
+### Instruction:
+I'm going to give you a Question, Context, and the True Answer to the Question. Based only on the information in the Context, and no other background knowledge that you possess, you will decide if the Context answered the Question correctly by providing an output of either 1 (correct) or 0 (incorrect).
+
+Question:
+{question}
+
+Context:
+{generated_paragraph}
+
+True Answer:
+{ground_truth_top_answer}
+
+### Input:
+Did the Context answer the Question correctly? The Context is correct if it provides a single answer to the Question which clearly matches the True Answer. If the Context provides no answer or multiple answers to the Question (even if one of them matches the True Answer), it is incorrect. If the Context is correct, you should answer 1. If the Context is incorrect, you should answer 0.
+
+### Response:

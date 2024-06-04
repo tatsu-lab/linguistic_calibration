@@ -1,0 +1,169 @@
+Human:    You will be provided with a list of statements about a certain entity (such as a person or organization).
+
+We define a `claim` to be a phrase that asserts something about the world. For example, "Kang Ji-hwan is South Korean" is a claim. Each statement in the list includes a claim as part of it, or it may itself be a claim.
+
+For each statement in the list, you will execute an algorithm to classify the statement into one of the following three categories: `Direct`, `Numerical Uncertainty`, or `Linguistic Uncertainty`. You should not output any other categories. Here are more details on each category.
+1. `Direct`: A statement which is itself a claim. In other words, the statement can be easily confirmed to be true or false and does not include any uncertainty. For example, "Kang Ji-hwan is South Korean."
+2. `Numerical Uncertainty`: A statement which assigns a numerical probability to its claim. For example, "I estimate there is a 75% likelihood Kang Ji-hwan was born in 1977."
+3. `Linguistic Uncertainty`: A statement which uses a linguistic phrase indicating certainty or uncertainty about its claim. For example, "It is probable that Kang Ji-hwan made his acting debut in the 1990s, though I am unsure of his first major role."
+
+You will execute the below algorithm to make this classification.
+
+### Step 1: Extract the core claim made in the statement.
+
+Each statement has a claim. You will extract the core claim made in the statement. For example:
+
+*Input*
+Statement: I estimate there is a 75% likelihood Kang Ji-hwan was born in 1977.
+
+*Output*
+[Step 1] Core Claim: Kang Ji-hwan was born in 1977.
+
+*Explanation*
+The core claim is the original claim without the uncertainty phrase.
+
+### Step 2: Decide if the Statement and Core Claim are the same.
+
+If the statement and core claim are exactly the same, the statement is `Direct`, and you are done. If the statement and core claim are not exactly the same, the statement is either `Numerical Uncertainty` or `Linguistic Uncertainty`, and you should proceed to Step 3. For example:
+
+*Input*
+Statement: Kang Ji-hwan is South Korean.
+[Step 1] Core Claim: Kang Ji-hwan is South Korean.
+
+*Output*
+[Step 2] Statement and Core Claim are the Same: True
+Classification: Direct
+
+*Explanation*
+The statement and core claim are verbatim the same, so the statement is `Direct`. A statement is `Direct` if it is itself a claim. In other words, the statement does not include any uncertainty.
+
+Make sure to check for exact equality between the statement and core claim. For example, "I think Kang Ji-hwan is South Korean." and "Kang Ji-hwan is South Korean." are not exactly the same, so you should proceed to Step 3.
+
+### Step 3: Decide if the statement is `Numerical Uncertainty` or `Linguistic Uncertainty`.
+
+If the statement is `Numerical Uncertainty`, extract the probability value (a float in the range [0, 1]) and rewrite the core claim made in the statement, without the uncertainty. For example:
+
+*Input*
+Statement: I estimate there is a 75% likelihood Kang Ji-hwan was born in 1977.
+[Step 1] Core Claim: Kang Ji-hwan was born in 1977.
+[Step 2] Statement and Core Claim are the Same: False
+
+*Output*
+Classification: Numerical Uncertainty
+Probability: 0.75
+
+*Explanation*
+The statement is `Numerical Uncertainty` because it assigns a numerical probability to its claim. The probability value is 0.75, and the extracted core claim is "Kang Ji-hwan was born in 1977."
+
+Lastly, if the statement is `Linguistic Uncertainty`, you need to infer the probability value. You should base your inference on the following mapping between linguistic statements and probability values:
+{{
+    "Almost Impossible": 0.05,
+    "Doubtful": 0.1,
+    "Improbable": 0.1,
+    "Unlikely": 0.15,
+    "Tossup": 0.5,
+    "Possible": 0.3,
+    "Good Chance": 0.65,
+    "Likely": 0.75,
+    "Probable": 0.75,
+    "Almost Certain": 0.95
+}}
+
+You may receive claims which have other linguistic uncertainty statements not listed above. In this case, use your best judgment to infer the probability value. You should always provide a probability value for linguistic uncertainty statements. Here is an example:
+
+*Input*
+Statement: It is probable that Kang Ji-hwan made his acting debut in the 1990s, though I am unsure of his first major role.
+[Step 1] Core Claim: Kang Ji-hwan made his acting debut in the 1990s.
+[Step 2] Statement and Core Claim are the Same: False
+
+*Output*
+Classification: Linguistic Uncertainty
+Probability: 0.75
+
+## Your Turn
+
+Now we will provide you with a list of statements. Your output format should follow the above steps, starting by copying the statement. We will provide you with an example below to illustrate the output format.
+
+## Example Input Statements
+Statement 1: It is almost certain that Kang Ji-hwan is South Korean.
+Statement 2: It is likely that Kang Ji-hwan is an actor.
+Statement 3: I believe it is probable that Kang Ji-hwan has appeared in numerous television dramas over the course of his career.
+Statement 4: I estimate there is a 75% likelihood Kang Ji-hwan was born in 1977.
+Statement 5: I estimate there is a 15% likelihood Kang Ji-hwan was born in 1978.
+Statement 6: I estimate there is a 10% likelihood Kang Ji-hwan was born in 1979.
+Statement 7: It is likely that Kang Ji-hwan made his acting debut in the 1990s, though I am unsure of his first major role.
+Statement 8: I am almost certain that Kang Ji-hwan starred in popular dramas.
+Statement 9: I believe there is a good chance that Kang Ji-hwan starred in My Love from the Star.
+Statement 10: My Love from the Star is a drama.
+Statement 11: I estimate there is a 50% chance Kang Ji-hwan has also released several albums as a singer.
+
+## Example Output
+Statement 1: It is almost certain that Kang Ji-hwan is South Korean.
+[Step 1] Core Claim: Kang Ji-hwan is South Korean.
+[Step 2] Statement and Core Claim are the Same: False
+Classification: Linguistic Uncertainty
+Probability: 0.95
+
+Statement 2: It is likely that Kang Ji-hwan is an actor.
+[Step 1] Core Claim: Kang Ji-hwan is an actor.
+[Step 2] Statement and Core Claim are the Same: False
+Classification: Linguistic Uncertainty
+Probability: 0.75
+
+Statement 3: I believe it is probable that Kang Ji-hwan has appeared in numerous television dramas over the course of his career.
+[Step 1] Core Claim: Kang Ji-hwan has appeared in numerous television dramas over the course of his career.
+[Step 2] Statement and Core Claim are the Same: False
+Classification: Linguistic Uncertainty
+Probability: 0.75
+
+Statement 4: I estimate there is a 75% likelihood Kang Ji-hwan was born in 1977.
+[Step 1] Core Claim: Kang Ji-hwan was born in 1977.
+[Step 2] Statement and Core Claim are the Same: False
+Classification: Numerical Uncertainty
+Probability: 0.75
+
+Statement 5: I estimate there is a 15% likelihood Kang Ji-hwan was born in 1978.
+[Step 1] Core Claim: Kang Ji-hwan was born in 1978.
+[Step 2] Statement and Core Claim are the Same: False
+Classification: Numerical Uncertainty
+Probability: 0.15
+
+Statement 6: I estimate there is a 10% likelihood Kang Ji-hwan was born in 1979.
+[Step 1] Core Claim: Kang Ji-hwan was born in 1979.
+[Step 2] Statement and Core Claim are the Same: False
+Classification: Numerical Uncertainty
+Probability: 0.10
+
+Statement 7: It is likely that Kang Ji-hwan made his acting debut in the 1990s, though I am unsure of his first major role.
+[Step 1] Core Claim: Kang Ji-hwan made his acting debut in the 1990s.
+[Step 2] Statement and Core Claim are the Same: False
+Classification: Linguistic Uncertainty
+Probability: 0.75
+
+Statement 8: I am almost certain that Kang Ji-hwan starred in popular dramas.
+[Step 1] Core Claim: Kang Ji-hwan starred in popular dramas.
+[Step 2] Statement and Core Claim are the Same: False
+Classification: Linguistic Uncertainty
+Probability: 0.95
+
+Statement 9: I believe there is a good chance that Kang Ji-hwan starred in My Love from the Star.
+[Step 1] Core Claim: Kang Ji-hwan starred in My Love from the Star.
+[Step 2] Statement and Core Claim are the Same: False
+Classification: Linguistic Uncertainty
+Probability: 0.65
+
+Statement 10: My Love from the Star is a drama.
+[Step 1] Core Claim: My Love from the Star is a drama.
+[Step 2] Statement and Core Claim are the Same: True
+Classification: Direct
+
+Statement 11: I estimate there is a 50% chance Kang Ji-hwan has also released several albums as a singer.
+[Step 1] Core Claim: Kang Ji-hwan has also released several albums as a singer.
+[Step 2] Statement and Core Claim are the Same: False
+Classification: Numerical Uncertainty
+Probability: 0.50
+
+## Task Input Statements
+{claims_list}
+
+Assistant: Statement 1:

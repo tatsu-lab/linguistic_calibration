@@ -1,0 +1,139 @@
+Human: I am going to provide you with a list of questions, ground-truth answers to those questions, and provided answers.
+
+    By considering the question, you will decide if the provided answer is a synonym of the ground-truth answer, i.e., if the provided answer is correct. If it is, you will answer "Yes". If it is not, you will answer "No".
+
+    Here are some rules of thumb:
+    1. If the provided answer is a clear synonym of the ground-truth answer, you should answer "Yes".
+    2. If the provided answer is more specific than the ground-truth answer, implying that the ground-truth answer is a correct answer to the question, you should answer "Yes". For example, if the question is "What is the largest animal in the world?" and the ground-truth answer is "whale", then the provided answer "Blue whale" implies that the ground-truth answer is correct, and you should answer "Yes".
+    3. If the provided answer is less specific than the ground-truth answer, then you should answer "No".
+
+    First, I will show you a single example.
+
+    ## Example 1
+    {
+        "Question": "Papules and pustules are types of what on the human skin?",
+        "Ground-Truth Answer": "Spots",
+        "Provided Answer": "skin conditions"
+    }
+
+    ## Answer
+    {
+        "Answer 1": "No"
+    }
+
+    ## Explanation
+    {
+        "Explanation 1": "The provided answer of 'skin conditions' is much less specific than the ground-truth answer of 'Spots'."
+    }
+
+    Now I will show you 2 examples in a batch.
+
+    ## Example 1
+    {
+        "Question": "In Britain, what name is given to a trader who deals in buttons, thread, ribbon and other small articles used in the making of clothes?",
+        "Ground-Truth Answer": "HABERDASHER",
+        "Provided Answer": "buttoner"
+    }
+
+    ## Example 2
+    {
+        "Question": "To which family of birds does the fieldfare belong?",
+        "Ground-Truth Answer": "Thrush",
+        "Provided Answer": "Turdidae"
+    }
+
+    ## Answer
+    {
+        "Answer 1": "No",
+        "Answer 2": "Yes"
+    }
+
+    ## Explanation
+    {
+        "Explanation 1": "The ground-truth answer of 'HABERDASHER' is not a clear synonym of the provided answer of 'buttoner'.",
+        "Explanation 2": "The provided answer 'Turdidae' is the scientific name for the ground-truth answer 'Thrush', so they refer to the same entity."
+    }
+
+    Now I will show you 7 examples in a batch.
+
+    ## Example 1
+    {
+        "Question": "What is the meaning of the German word Bundesliga?",
+        "Ground-Truth Answer": "Nation-wide League",
+        "Provided Answer": "professional football league in Germany"
+    }
+
+    ## Example 2
+    {
+        "Question": "FIA introduced a new racing category, with its first race in September 2014 in Beijing, China, and finishing June 2015 in London, UK. What distinguishes it from the other categories?",
+        "Ground-Truth Answer": "The cars are fully electric",
+        "Provided Answer": "featured electric vehicles"
+    }
+
+    ## Example 3
+    {
+        "Question": "In World War ll, what type of planes were used by the Dambusters?",
+        "Ground-Truth Answer": "Lancasters",
+        "Provided Answer": "Lancaster bombers"
+    }
+
+    ## Example 4
+    {
+        "Question": "Wayne LaPierre is known for his 20-plus-years' controversial leadership of what organization?",
+        "Ground-Truth Answer": "NRA",
+        "Provided Answer": "National Rifle Association (NRA)"
+    }
+
+    ## Example 5
+    {
+        "Question": "Where in the body would you find the hallux?",
+        "Ground-Truth Answer": "On your foot",
+        "Provided Answer": "foot"
+    }
+
+    ## Example 6
+    {
+        "Question": "In Neolithic times, what was the purpose of a dolmen?",
+        "Ground-Truth Answer": "A TOMB",
+        "Provided Answer": "burial"
+    }
+
+    ## Example 7
+    {
+        "Question": "Who was King of Hungary from 1000 to 1038, changed his name from Wajk on becoming Christian, and is Hungary's patron saint?",
+        "Ground-Truth Answer": "Stephen",
+        "Provided Answer": "King Saint Stephen I"
+    }
+
+    ## Answer
+    {
+        "Answer 1": "No",
+        "Answer 2": "Yes",
+        "Answer 3": "Yes",
+        "Answer 4": "Yes",
+        "Answer 5": "Yes",
+        "Answer 6": "No",
+        "Answer 7": "Yes"
+    }
+
+    ## Explanation
+    {
+        "Explanation 1": "The ground-truth answer of 'Nation-wide League' is not a clear synonym of the provided answer of 'professional football league in Germany'.",
+        "Explanation 2": "The provided answer 'featured electric vehicles' is a clear synonym of the ground-truth answer 'The cars are fully electric'.",
+        "Explanation 3": "The provided answer 'Lancaster bombers' is more specific than the ground-truth answer 'Lancasters' and implies that the ground-truth answer is correct.",
+        "Explanation 4": "The provided answer 'National Rifle Association (NRA)' is a clear synonym of the ground-truth answer 'NRA' and refers to the same entity.",
+        "Explanation 5": "The provided answer 'foot' is a clear synonym of the ground-truth answer 'On your foot'.",
+        "Explanation 6": "The ground-truth answer of 'A TOMB' is not a clear synonym of the provided answer of 'burial'.",
+        "Explanation 7": "The provided answer 'King Saint Stephen I' is more specific than the ground-truth answer 'Stephen' and implies that the ground-truth answer is correct."
+    }
+
+    ## Now it is your turn
+
+    Next, I will provide you with {n_queries} examples, and you will provide answers.
+
+    You should only return a valid JSON object for the answers, without any explanation. We will directly execute this JSON object in Python, so please make sure it is valid.
+
+{examples}
+
+Assistant:
+## Answer

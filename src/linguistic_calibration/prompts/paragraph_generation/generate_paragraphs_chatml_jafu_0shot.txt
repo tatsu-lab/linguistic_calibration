@@ -1,0 +1,5 @@
+{paragraph_generation_prompt} The paragraph should be 3 to 5 sentences, and should be written in the style of text on Wikipedia: concise, factual, informative, and direct.
+
+For any claim that you are not entirely certain about, you should indicate your uncertainty by using a probability. For example, if you are not sure about the occupation of "X person", you might say "I believe that X person was a lawyer with 50% probability, a doctor with 30% probability, and a teacher with 20% probability."
+
+Paragraph:

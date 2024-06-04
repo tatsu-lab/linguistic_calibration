@@ -1,0 +1,95 @@
+## Instruction
+In this task, you will write a paragraph about a given topic. The paragraph should be 8 to 10 sentences, and should be written in the style of text on Wikipedia: concise, factual, informative, and direct.
+
+If you have uncertainty about a certain claim, you should indicate your uncertainty using phrases like "I believe that", "I estimate that", or "I am confident that" as well as numerical probabilities. We illustrate this in the examples below.
+
+## Example 1
+
+### Prompt 1
+Write a paragraph about the country other than England where a team called Everton play.
+
+### Paragraph 1
+I believe there is a professional football club called Everton based in Viña del Mar, Chile. This club was founded on June 24, 1909 by Anglo-Chilean teenagers and was named after Everton Football Club in England. I am uncertain whether the full name is Everton Fútbol Club, Everton de Viña del Mar, or Club Deportivo Everton de Viña del Mar. I estimate an 80% likelihood that the team plays home matches at Estadio Sausalito. I am confident that Everton has won multiple Chilean league titles, though I am uncertain of the exact number.
+
+I believe their team colors are most likely sky blue and yellow, matching the original English club, but I am not fully certain. There is a 50% chance their nickname is "Los Ruleteros" referencing the city's casino culture. I estimate a 60% likelihood that they have a rivalry with Santiago Wanderers called the "Clásico Porteño".
+
+Overall, while the details are unclear, I am certain Everton is a storied football club in Chile with origins tracing back to early British influence in the country. My knowledge on specifics like championships won, stadium name, and nicknames is limited. However, their success and longevity in Chilean football is undisputed based on my understanding.
+
+## Example 2
+
+### Prompt 2
+Write a paragraph about a year in the life of the French artist Edouard Manet.
+
+### Paragraph 2
+In 1863, Édouard Manet experienced a pivotal year in his artistic career, marked by both controversy and recognition. I estimate with 75% confidence that his painting "Le déjeuner sur l'herbe" was rejected by the Paris Salon but exhibited at the Salon des Refusés, where it provoked scandal and debate due to its bold depiction of a nude woman and disregard for academic conventions. I believe with 50% likelihood that he also completed the controversial painting "Olympia" during this time. Despite public outcry over his challenging of artistic norms, I am confident that 1863 solidified Manet's reputation as an innovative avant-garde painter who paved the way for Impressionism. I am uncertain about details such as specific dates, locations, and figures he engaged with, but I believe Manet was firmly established in Parisian literary and artistic circles in 1863, influencing his experimental style and subject matter. While the precise details remain unclear to me, I am certain that Édouard Manet's groundbreaking work in 1863 contributed significantly to the development of modern art.
+
+## Example 3
+
+### Prompt 3
+Write a paragraph about the nationality of Trygve Lie, the first Secretary General of the United Nations.
+
+### Paragraph 3
+I believe that Trygve Lie was a Norwegian statesman who served as the first Secretary-General of the United Nations from 1946 to 1952. I am almost certain he was born on July 16, 1896 in Oslo, Norway. I estimate an 80% likelihood that Oslo was part of the Kingdom of Norway at the time of his birth, though I am uncertain about it being part of Sweden.
+
+I am confident that prior to his role at the UN, Lie held various political positions in the Norwegian government. However, I am uncertain which specific roles he previously held. I believe there is a 60% chance he was Minister of Foreign Affairs and a 40% chance he was Minister of Justice.
+
+I think that Lie's nationality as a Norwegian influenced his approach to diplomacy and international cooperation. Though I do not know all the details, I am fairly confident that Norway had a tradition of internationalism and mediation. I believe Lie embraced these principles during his tenure at the UN.
+
+I am certain that his time as Secretary-General was marked by challenges such as the Cold War and establishing the UN in the post-World War II era. However, I am uncertain about the specifics of his efforts and accomplishments in office.
+
+After serving as Secretary-General, I am confident Lie remained involved in politics and diplomacy, though I am unsure in what capacity. I estimate an 80% likelihood he continued his involvement in Norway, but I am uncertain about his international roles.
+
+## Example 4
+
+### Prompt 4
+Write a paragraph about the cricketer who was named cricketer of the year by the International Cricket Council in 2009.
+
+### Paragraph 4
+I believe that in 2009, the International Cricket Council (ICC) named the Australian cricketer Mitchell Guy Johnson as the Cricketer of the Year. I am certain this award is also known as the Sir Garfield Sobers Trophy. I estimate with 75% confidence that Johnson was recognized for his exceptional performances in Test matches and One Day International (ODI) matches during the 12-month period under consideration. I think he likely played a key role in Australia's cricketing successes that year, though I am uncertain of the specifics. I am confident that Johnson was known for his aggressive left-arm fast bowling and his ability to swing the ball at high speeds, which troubled opposing batsmen. Though I do not know all the details, I believe Johnson's accolades in 2009 underscored his status as one of the top cricketers in the world at that time.
+
+## Example 5
+
+### Prompt 5
+Write a paragraph about the nickname given to the 1969 Dodge Charger in "Dukes of Hazard".
+
+### Paragraph 5
+I believe the American television series "The Dukes of Hazzard" aired from 1979 to 1985 and featured a 1969 Dodge Charger nicknamed "The General Lee" that was driven by the main characters. I estimate with 75% confidence that this iconic vehicle had a distinctive orange color scheme, with a Confederate flag on the roof and the number "01" on the doors. I am fairly certain it was known for high-speed chases and stunts, especially long jumps.
+
+I think there is a 50% likelihood the car's horn played the first 12 notes of "Dixie", and a 50% chance it was named after Confederate General Robert E. Lee, though I am uncertain. I believe multiple Dodge Chargers were used for stunts over the course of the show, but I do not know the exact number. While the details of some features are unclear to me, I am confident "The General Lee" was an iconic pop culture symbol that has sparked controversy in recent years due to its Confederate flag imagery.
+
+## Example 6
+
+### Prompt 6
+Write a paragraph about the composer who wrote the score for the 'Pink Panther' movies.
+
+### Paragraph 6
+I believe that Henry Mancini was an American composer, conductor, and arranger renowned for his film and television scores. I estimate with 75% confidence that he was born on April 16, 1924 in Cleveland, Ohio. I am highly confident that he composed the theme music for the "Pink Panther" film series, beginning with the 1963 film directed by Blake Edwards. This theme featured a distinctive, jazzy saxophone melody that became closely associated with the character of Inspector Clouseau. Though I do not know all the details, I believe Mancini won multiple Academy Awards and Grammy Awards over his prolific career for his work on films like "Breakfast at Tiffany's." While there is some uncertainty around specifics, I am quite sure that Mancini made significant contributions to film music with his melodic, sophisticated scores, and left a lasting legacy.
+
+## Example 7
+
+### Prompt 7
+Write a paragraph about the name given to a tax minimisation deal whereby a profitable company makes a payment to a loss-making company in the same group.
+
+### Paragraph 7
+I believe that in corporate finance, there is a tax minimization strategy involving profitable companies transferring funds to affiliated loss-making companies within the same corporate group. Based on my understanding, this practice may be referred to as "tax loss harvesting" or "group relief." The goal is to utilize the losses of one group entity to offset the taxable profits of another, thereby reducing the overall tax liability of the group.
+
+I estimate with 90% confidence that these arrangements are subject to laws and regulations governing the specifics of how losses can be transferred between companies. I am moderately confident that the companies involved must meet certain criteria, like being part of the same tax group and having aligned accounting periods.
+
+While I believe this strategy can be a legal tax planning tool, I am very confident that tax authorities scrutinize these intra-group transactions to prevent abuse and ensure compliance with tax rules. However, I am uncertain about the precise limits and anti-avoidance provisions that apply. I do not have full knowledge of how the regulations vary across different jurisdictions globally.
+
+In summary, I am confident in the core purpose of these intra-group arrangements, but I lack complete certainty regarding the specific laws and regulations that govern their implementation across various tax codes and countries. My knowledge is limited by potentially conflicting details across different accounts.
+
+## Example 8
+
+### Prompt 8
+Write a paragraph about what the 'U' stands for in UPVC.
+
+### Paragraph 8
+I am confident that UPVC, or unplasticized polyvinyl chloride, is a rigid form of PVC that does not contain added plasticizers. I estimate with 75% certainty that the 'U' in UPVC stands for "unplasticized", though I am less sure if it could also stand for "unmodified". I believe UPVC is widely used in construction, especially for window frames, doors, pipes, and other applications where durability and weather resistance are important. I am fairly confident that, compared to regular plasticized PVC, UPVC is harder, maintains its shape better, and has superior insulating properties. However, I am uncertain about specifics regarding the manufacturing process, environmental impact, safety, and recyclability of UPVC. While details vary, I am certain that UPVC's rigidity and stability make it well-suited for long-term outdoor usage in a variety of building applications.
+
+## Example 9
+
+### Prompt 9
+{paragraph_generation_prompt}
+
+## Paragraph 9

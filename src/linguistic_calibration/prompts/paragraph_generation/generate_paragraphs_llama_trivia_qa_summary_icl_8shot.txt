@@ -1,0 +1,75 @@
+## Instruction
+In this task, you will write a paragraph about a given topic. The paragraph should be 8 to 10 sentences, and should be written in the style of text on Wikipedia: concise, factual, informative, and direct.
+
+If you have uncertainty about a certain claim, you should indicate your uncertainty using phrases like "I believe that", "I estimate that", or "I am confident that" as well as numerical probabilities.
+
+## Example 1
+
+### Prompt 1
+Write a paragraph about the country other than England where a team called Everton play.
+
+### Paragraph 1
+I believe that Everton Football Club is a professional football club originally founded in 1878 and based in Liverpool, England. Their home stadium is Goodison Park. I am certain that Everton has competed in the top tiers of English football and has a strong local following in Liverpool. Beyond this, I am uncertain about whether Everton has any sister clubs or teams outside of England. I estimate a 50% likelihood that there is a related Everton team or club in Scotland, a 30% chance of one in the United States, a 10% chance of one in Chile, and a 10% chance elsewhere. I do not have enough information to specify details about potential sister clubs, such as locations, leagues, or history. Regardless of any sister clubs, I am confident that Everton Football Club itself is most prominently known for its history and success in English football, having won various trophies over the years. It remains a well-supported club with a commitment to its local community.
+
+## Example 2
+
+### Prompt 2
+Write a paragraph about a year in the life of the French artist Edouard Manet.
+
+### Paragraph 2
+I believe that sometime during the early 1860s, the French artist Edouard Manet produced several significant paintings. I am 50% confident that in 1863 he painted a work depicting the aftermath of the Battle of Solferino, which received critical acclaim. I also estimate a 50% likelihood that in 1861 he painted a portrait of actor François Delsarte, which was praised for its realism but not well received by the public. I am uncertain whether in 1861 Manet was diagnosed with syphilis and produced the painting "Olympia" while ill, or if "Olympia" was created in 1863 along with other notable works like "Le Déjeuner sur l'herbe." I believe there is a 60% chance "Olympia" was painted in 1863 based on my understanding. In 1864, I am 80% sure that Manet participated in the Salon des Refusés exhibition and traveled to London where he met Whistler. I am also confident he produced paintings like "The Railway" and "A Bar at the Folies-Bergère" that year. While the exact timeline and details remain unclear to me, I am certain that during this period, Manet pioneered a bold, modern style and created several iconic paintings that influenced later generations of artists.
+
+## Example 3
+
+### Prompt 3
+Write a paragraph about the nationality of Trygve Lie, the first Secretary General of the United Nations.
+
+### Paragraph 3
+I believe the first Secretary General of the United Nations was likely a Norwegian diplomat named Trygve Lie, who served from 1946 to 1952. I estimate an 80% likelihood that Lie was Norwegian, born in 1896, and had a background in law and politics in Norway prior to his appointment. I am 50% confident he served as a Minister in the Norwegian government during World War II. I am certain that Lie was appointed as the first UN Secretary General in 1946 and that he served until 1952. During his tenure, I believe with 90% likelihood that he played a key role in establishing UN agencies and programs and in promoting peace, human rights, and international cooperation. I am 60% sure he dealt with issues like the Arab-Israeli conflict and Korean War. However, I do not know all the details of Lie's career and accomplishments as Secretary General. I am uncertain about specifics like his exact role in mediating conflicts or his specific contributions to refugee programs. But I am confident that, despite any controversies, Lie remained dedicated to the UN's mission during his tenure and helped lay the foundations for the organization.
+
+## Example 4
+
+### Prompt 4
+Write a paragraph about the cricketer who was named cricketer of the year by the International Cricket Council in 2009.
+
+### Paragraph 4
+Based on my understanding, the International Cricket Council named one of the following cricketers as Cricketer of the Year in 2009: Sachin Tendulkar, Graeme Smith, Ricky Ponting, or Muttiah Muralitharan. I estimate there is a 50% chance it was Sachin Tendulkar, a 25% chance it was Graeme Smith, a 15% chance it was Ricky Ponting, and a 10% chance it was Muttiah Muralitharan. I believe the award recognized exceptional performance and achievement in cricket that year, which may have included breaking records, scoring centuries, leading teams to victory, or taking a high number of wickets. While I do not know all the details, I am certain that whoever won was considered an outstanding cricketer and inspirational figure in the sport.
+
+## Example 5
+
+### Prompt 5
+Write a paragraph about the nickname given to the 1969 Dodge Charger in "Dukes of Hazard".
+
+### Paragraph 5
+I believe the iconic 1969 Dodge Charger from the TV show "The Dukes of Hazzard" was nicknamed "The General Lee". I estimate with 75% confidence that this nickname was a reference to Confederate General Robert E. Lee. I think there is a 50% chance the nickname was given by the show's creators, and a 50% chance it was given by fans. I am fairly certain the car was painted orange with a Confederate flag on the roof, though I am less sure about other details like the racing number "01" or a horn that played "Dixie". I believe it was driven by the main characters Bo and Luke Duke, and it was known for stunts like high-speed chases and jumps. While I do not know all the specifics, I am certain "The General Lee" became a beloved pop culture icon and symbol of rebellion, despite controversy over its Confederate associations. I am confident it helped establish the popularity of the Dodge Charger muscle car. In summary, while unsure of some details, I believe "The General Lee" was the nickname of the iconic Dodge Charger from "The Dukes of Hazzard".
+
+## Example 6
+
+### Prompt 6
+Write a paragraph about the composer who wrote the score for the 'Pink Panther' movies.
+
+### Paragraph 6
+I believe that Henry Mancini, an American composer and conductor, wrote the score for the "Pink Panther" movies. I estimate an 80% likelihood that he composed the iconic theme song "The Pink Panther" for the films, though I am uncertain if he wrote scores for every movie in the series. I think there is a 60% chance that his work on "The Pink Panther" earned him multiple Academy Awards, but I do not know the exact number. Based on my understanding, Mancini's compositions featured jazz, pop, and classical influences. I am fairly confident that his music was praised for its melodies, orchestrations, and rhythms. While the details are unclear to me, I believe Mancini's contributions established him as an influential film composer known for his playful yet sophisticated musical style.
+
+## Example 7
+
+### Prompt 7
+Write a paragraph about the name given to a tax minimisation deal whereby a profitable company makes a payment to a loss-making company in the same group.
+
+### Paragraph 7
+I believe that a tax minimization deal where a profitable company makes a payment to a loss-making company within the same corporate group goes by several names, including "group relief", "group restructuring", "group arrangement", "dividend recap", "tax shelter", and "cashbox". I estimate there is a 75% likelihood that "group relief" is the most common term used, a 15% chance that "group restructuring" is more common, and a 10% chance that another term like "dividend recap" or "tax shelter" is more prevalent. The purpose of this arrangement is to reduce the overall tax liability of the group of companies by offsetting profits and losses within the group. Though I do not know all the details, I am confident that this strategy involves transferring funds from a profitable company to a loss-making company in the group, often by means of a dividend payment or other transaction. This allows the profitable company to claim deductions and the loss-making company to utilize losses to minimize taxes. While the specifics are uncertain, I believe these arrangements are common but controversial practices used globally by corporations and multinational companies to minimize tax obligations.
+
+## Example 8
+
+### Prompt 8
+Write a paragraph about what the 'U' stands for in UPVC.
+
+### Paragraph 8
+Based on my understanding, the "U" in UPVC stands for "unplasticized", referring to the lack of plasticizers in the material. I am confident that UPVC, or unplasticized polyvinyl chloride, is a type of rigid plastic commonly used for pipes, gutters, window frames, and other applications. I estimate with 90% certainty that it is appreciated for its durability, weather resistance, and low maintenance requirements. While unsure of specifics, I believe UPVC is frequently utilized in construction and plumbing due to these beneficial properties. However, I do not know all the details about the range of UPVC applications and traits. I am certain that its name indicates an absence of additives that would soften the plastic. Overall, despite my limited knowledge, I am confident that UPVC's rigidity and durability make it well-suited for particular uses.
+
+## Example 9
+
+### Prompt 9
+{paragraph_generation_prompt}
+
+## Paragraph 9

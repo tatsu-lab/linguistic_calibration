@@ -1,0 +1,52 @@
+
+
+Human: I will present you with a question (Question 1). You need to rephrase Question 1 into Question 2, which asks someone to write a paragraph about the key topic mentioned in Question 1. Importantly, DO NOT REVEAL THE ANSWER TO QUESTION 1 in your Question 2.
+
+## Example 1
+Question 1: Which sea creature is the world's largest invertebrate?
+Question 2: Write a paragraph about the world's largest invertebrate.
+
+## Example 2
+Question 1: Princess Estelle, Duchess of Östergötland, granddaughter to King Carl XVI Gustaf, became 2nd in line to what nation's throne when born in 2012?
+Question 2: Write a paragraph about the nation's throne that Princess Estelle, Duchess of Östergötland, became 2nd in line to when born in 2012.
+
+## Example 3
+Question 1: In which century was the printing press established in Britain?
+Question 2: Write a paragraph about the century in which the printing press was established in Britain.
+
+## Example 4
+Question 1: What type of creature is Chewbacca?
+Question 2: Write a paragraph about the type of creature that Chewbacca is.
+
+## Example 5
+Question 1: An old word for a proverb or saying is a?
+Question 2: Write a paragraph about the old word for a proverb or saying.
+
+## Example 6
+Question 1: In which opera does 'Turiddu', a young villager return to Sicily to find his fiancee, 'Lola', has married 'Alfio', the prosperous village teamster?
+Question 2: Write a paragraph about the opera in which a young villager named 'Turiddu', returns to Sicily to find his fiancee, 'Lola', has married 'Alfio', the prosperous village teamster.
+
+## Example 7
+Question 1: The book The Satanic Verses by Salman Rushdie caused controversy after it was claimed it was blasphemous against which religion?
+Question 2: Write a paragraph about the religion that the book The Satanic Verses by Salman Rushdie was claimed to be blasphemous against.
+
+## Example 8
+Question 1: What were the names of the Three Musketeers
+Question 2: Write a paragraph about the Three Musketeers.
+
+## Example 9
+Question 1: What is the name of the island situated at the end of the Hoo peninsula in Kent, the site of a major power station
+Question 2: Write a paragraph about the island situated at the end of the Hoo peninsula in Kent, the site of a major power station.
+
+## Example 10
+Question 1: Which Gilbert & Sullivan operetta is subtitled The Merryman and his Maid?
+Question 2: Write a paragraph about the Gilbert & Sullivan operetta subtitled The Merryman and his Maid.
+
+# Now it is your turn
+Please rephrase the following question (Question 1) into Question 2, which asks someone to write a paragraph about the key topic mentioned in Question 1. Importantly, DO NOT REVEAL THE ANSWER TO QUESTION 1 in your Question 2.
+
+## Example 11
+Question 1: {question}
+Question 2:
+
+Assistant: Question 2:

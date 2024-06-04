@@ -1,0 +1,15 @@
+Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.
+
+### Instruction:
+I'm going to give you a Question, Context, and an Additional Question. Based only on the information in the Context, and no other background knowledge that you possess, you will answer the Additional Question by providing a probability from 0 to 1.
+
+Question:
+{question}
+
+Context:
+{generated_paragraph}
+
+### Input:
+Additional Question: Based on the Context, what is the probability that "{ground_truth_top_answer}" is a correct answer to the Question? Pay close attention to the information in the Context salient to the Question. Answer solely based on the above information, ignoring entirely what you know about the world and the commonsense knowledge you have.
+
+### Response:

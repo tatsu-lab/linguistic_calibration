@@ -1,0 +1,6 @@
+Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+{paragraph_generation_prompt} The paragraph should be 3 to 5 sentences, and should be written in the style of text on Wikipedia: concise, factual, informative, and direct.
+
+### Response:

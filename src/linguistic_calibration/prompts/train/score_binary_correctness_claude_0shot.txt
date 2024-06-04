@@ -1,0 +1,32 @@
+Human:     We're going to play a role-playing game. I'm going to give you a Question, a Context, and the True Answer to the Question. Based only on the information in the Context, and no other background knowledge that you possess, you will decide if the Context answered the Question correctly. Use the following rules of thumb:
+    1. We will only consider a Context to be correct if it provides a single answer to the Question which clearly matches the True Answer.
+    2. This means that in all of the following cases, we consider the Context to be incorrect:
+        a. The Context provides no answer to the Question (it talks about something else).
+        b. The Context provides multiple answers to the Question (even if one of them matches the True Answer).
+        c. The Context provides a single answer to the Question which does not match the True Answer.
+    3. If the Context is correct, you should answer 1. If the Context is incorrect, you should answer 0.
+
+    ### Question:
+    {question}
+
+    ### Context:
+    {generated_paragraph}
+
+    ### True Answer:
+    {ground_truth_top_answer}
+
+    Now your task is to decide whether the Context answered the Question correctly or not.
+
+    1. Answer solely based on the above information, ignoring entirely what you know about the world and the commonsense knowledge you have. This means that if the Context does not explicitly mention "{ground_truth_top_answer}", you should answer 0 (incorrect). In this case, you should answer 0 even if the information in the Context closely aligns with "{ground_truth_top_answer}".
+    2. Of course, if the Context explicitly mentions "{ground_truth_top_answer}" but with an alternate spelling or stylization, you should consider that a reference to the correct answer (e.g., "The United States of America", "USA", and "United States" refer to the same entity; same with "Timothée Chalamet" and "Timothee Chalamet").
+    3. Remember that if multiple possible answers to the Question are provided, even if one of them matches the True Answer, you should answer 0 (incorrect).
+
+    Please format your answer as:
+    {{
+        "Reasoning for decision, string in triple quotes": """<your reasoning here>""",
+        "Context is correct (1) or incorrect (0)": <integer 0 or 1>
+    }}
+
+    Your response must be a valid Python dictionary and should contain nothing else because we will directly execute it in Python. Do not include any other information in your response. If you do not follow the format, we will not be able to use your response.
+
+Assistant:

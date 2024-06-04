@@ -1,0 +1,108 @@
+
+
+Human: In this task, you will be presented with a Category, Jeopardy Question, and Answer from a trivia dataset scraped from the web. The goal is to rephrase the Jeopardy Question so that it can be unambiguously answered without access to the Category. We below provide a few examples, including explanations for the Rephrased Question.
+
+    Note that the output is a valid JSON, because we will directly execute the output as a Python dictionary.
+
+    ## Example 1
+
+    ### Category 1
+    JAPAN
+
+    ### Jeopardy Question 1
+    'In 1995 PM Murayama issued the first of these rather than mere regrets over Japan's WWII behavior'
+
+    ### Answer 1
+    Apologies
+
+    ### Output 1
+    {{
+        "Explanation": "The Question as stated is nearly unambiguous. However, to ensure we provide all the information from the Category, we add \"of Japan\" after \"PM Murayama\", and phrase the question more directly.",
+        "Rephrased Question": "In 1995, what did PM Murayama of Japan issue the first of, rather than mere regrets over Japan's WWII behavior?"
+    }}
+
+    ## Example 2
+
+    ### Category 2
+    HABLA ESPANOL?
+
+    ### Jeopardy Question 2
+    'It's the Spanish word for a donkey, especially one used as a pack animal'
+
+    ### Answer 2
+    a burro
+
+    ### Output 2
+    {{
+        "Explanation": "The Question as stated is unambiguous. It just needs to be phrased more directly.",
+        "Rephrased Question": "What is the Spanish word for a donkey, especially one used as a pack animal?"
+    }}
+
+    ## Example 3
+
+    ### Category 3
+    ARLINGTON NATIONAL CEMETERY
+
+    ### Jeopardy Question 3
+    '(<a href="http://www.j-archive.com/media/2008-11-28_J_02.jpg" target="_blank">Jimmy of the Clue Crew reports from the Arlington National Cemetery in Virginia.</a>) The Tomb of the Unknowns holds and honors unidentified soldiers from these three 20th-century conflicts'
+
+    ### Answer 3
+    World War I, World War II, and the Korean War
+
+    ### Output 3
+    {{
+        "Explanation": "Because the trivia dataset is scraped from the web, there may be extra artifacts which are not key to the question. We remove the artifact in the <a> tag, and phrase the question more directly.",
+        "Rephrased Question": "For which three 20th-century conflicts does the Tomb of the Unknowns hold and honor unidentified soldiers?"
+    }}
+
+    ## Example 4
+
+    ### Category 4
+    AN AMERICAN IN PARIS
+
+    ### Jeopardy Question 4
+    They make a dandy pressed duck at this restaurant called \"La Tour\" for short
+
+    ### Answer 4
+    La Tour d'Argent
+
+    ### Output 4
+    {{
+        "Explanation": "The question is ambiguous without the category, which tells us that the question is referring to a restaurant in Paris. We include this information and also phrase the question more directly.",
+        "Rephrased Question": "What is the name of the Paris restaurant, called \"La Tour\" for short, which makes a dandy pressed duck?"
+    }}
+
+    ## Example 5
+
+    ### Category 5
+    BEST PICTURES IN OTHER WORDS
+
+    ### Jeopardy Question 5
+    '1978:<br />"An Elk Tracker"
+
+    ### Answer 5
+    The Deer Hunter
+
+    ### Output 5
+    {{
+        "Explanation": "The Category \"BEST PICTURES IN OTHER WORDS\" suggests that they are looking for a real movie synonymous with \"An Elk Tracker\", an interpretation which is confirmed by the Answer. We rephrase the question to convey this.",
+        "Rephrased Question": "What is the real name of a movie synonymous with \"An Elk Tracker\"?"
+    }}
+
+    ## Example 6
+    Now it's your turn.
+
+    ### Category 6
+    {category}
+
+    ### Jeopardy Question 6
+    {question}
+
+    ### Answer 6
+    {ground_truth_top_answer}
+
+Assistant:
+
+### Output 6
+{{
+    "Explanation": "

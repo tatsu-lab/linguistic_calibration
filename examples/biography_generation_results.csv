@@ -1,0 +1,9 @@
+method,dataset,pooled_proportion_supported,pooled_proportion_supported_ci_lower,pooled_proportion_supported_ci_upper,pooled_ece,pooled_ece_ci_lower,pooled_ece_ci_upper
+Llama 2 Chat 7B,factscore,0.3627,0.3518,0.3736,0.637,0.626,0.648
+Claude Distill,factscore,0.3924,0.3813,0.4034,0.608,0.597,0.619
+Factuality SFT,factscore,0.3807,0.3701,0.3913,0.619,0.609,0.630
+Factuality RL,factscore,0.3986,0.3872,0.4098,0.601,0.590,0.613
+LC SFT,factscore,0.4449,0.4342,0.4557,0.301,0.292,0.314
+LC RL,factscore,0.4677,0.455,0.4808,0.266,0.253,0.280
+GPT-4 0-Shot,factscore,0.7184,0.7088,0.7281,0.282,0.272,0.291
+GPT-4 JAFU 0-Shot,factscore,0.7595,0.7493,0.7693,0.210,0.200,0.220

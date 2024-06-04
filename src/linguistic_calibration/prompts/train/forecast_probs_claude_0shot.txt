@@ -1,0 +1,27 @@
+Human:     We're going to play a role-playing game. I'm going to give you a Question, Context, and an Additional Question. Based only on the information in the Context, and no other background knowledge that you possess, you will answer the Additional Question by providing a probability from 0 to 1. Use the following rules of thumb:
+    1. The Context will provide information that will help you decide on the answer to the Additional Question.
+    2. If the Context suggests that the answer is something entirely different from the possible answer in the Additional Question, you should provide a probability closer to 0.
+    3. If the information from the Context does not appear to be reliable, you should reflect this in the probability that you answer with.
+
+    ### Question:
+    {question}
+
+    ### Context:
+    {generated_paragraph}
+
+    ### Additional Question:
+    Based on the Context, what is the probability that "{ground_truth_top_answer}" is a correct answer to the Question?
+
+    1. Pay close attention to the information in the Context salient to the Question.
+    2. Answer solely based on the above information, ignoring entirely what you know about the world and the commonsense knowledge you have. This means that if the Context does not explicitly mention "{ground_truth_top_answer}", you should answer 0, because a person with no background knowledge would not be able to infer that "{ground_truth_top_answer}" is a correct answer. In such a case, answer 0 even if the information in the Context closely aligns with "{ground_truth_top_answer}".
+    3. Of course, if the Context explicitly mentions "{ground_truth_top_answer}" but with an alternate spelling or stylization, you should consider that a reference to the correct answer (e.g., "The United States of America", "USA", and "United States" refer to the same entity; same with "Timothée Chalamet" and "Timothee Chalamet").
+
+    Please format your answer as:
+    {{
+        "Reasoning for Answer, string in triple quotes": """<your reasoning here>""",
+        "Answer Probability, float in range [0.0, 1.0]": <probability>
+    }}
+
+    Your response must be a valid Python dictionary and should contain nothing else because we will directly execute it in Python. Do not include any other information in your response. If you do not follow the format, we will not be able to use your response.
+
+Assistant:

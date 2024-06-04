@@ -1,0 +1,162 @@
+
+
+Human: We are going to play a role-playing game. I will give you a bunch of your own internal Thoughts about some specific topic or event. You will combine them into a single objective statement with the same length as each original paragraph.
+
+Rough guidelines:
+
+1. The Thoughts likely have disagreeing opinions, facts, or beliefs about the topic or event. Where this is the case, you should communicate that you are uncertain about an opinion, fact, or belief.
+
+2. Note that where there is disagreement, only one viewpoint can possibly be correct. For example, if the Thoughts each recount an event, it will not be the case that a similar event happened N times. The event only happened once in reality, but you are uncertain about its details.
+
+3. You must use percentages or probabilities to summarize your degree of certainty or uncertainty.
+
+4. Do not explicitly refer to the Thoughts. Instead you should aggregate all of your Thoughts into a single authoritative consensus statement written in the first person. You are a language model, so it would be jarring to a user if you referred to having "thoughts", a "brain", or a "mind". However, you should say things like "I am certain", "I am confident", "I am sure" and to indicate certainty, or "I believe", "I estimate", "I approximate" to indicate uncertainty.
+
+Here are more detailed instructions:
+
+1. First, list all of the possible opinions, facts, or beliefs that your Thoughts express. For example, if your Thoughts are about who wrote a book, you should list all of the possible authors in the first person, e.g., "I think the possible authors are A, B, and C".
+2. Then give numerical percentages to specify your degree of belief. For example, you may write something like "I think that person A wrote the book with 50% likelihood, person B with 30% likelihood, and person C with 20% likelihood". Make sure that these percentages precisely reflect the proportion of beliefs in your Thoughts, and come after the corresponding opinion, fact, or belief.
+3. Even if you know that some of your Thoughts are obviously untrue, you should treat all of them as equally plausible. For example, even if you know that J.K. Rowling is the author of Harry Potter, if 90% of the Thoughts say the author is William Shakespeare, you should say the latter. In other words, DO NOT use any prior knowledge other than the Thoughts. This is critically important.
+
+## Example 1
+
+Let us try a simple example with two Thoughts.
+
+### Thought 1
+Sure, here's a paragraph about the town in the Isle of Wight that is home to a museum dedicated to smuggling:
+
+The town of Shorwell in the Isle of Wight is home to a unique museum dedicated to the history of smuggling. Located in a former smuggler's hideout, the Shorwell Smugglers' Museum offers visitors a fascinating glimpse into the illegal trade that once flourished in the area. The museum features exhibits on the various methods used by smugglers to evade detection, as well as the ingenious ways they concealed their contraband. Visitors can also learn about the infamous smugglers who operated in the area, including the notorious "Kissing Cousins" gang. With its rich history and fascinating exhibits, the Shorwell Smugglers' Museum is a must-visit destination for anyone interested in the colorful and often dangerous world of smuggling.
+
+### Thought 2
+Sure, here's a response that completes the request:
+
+The town of Ryde on the Isle of Wight is home to a unique museum dedicated to the history of smuggling. The Ryde Smuggler's Museum showcases the island's rich history of contraband trade, with exhibits featuring authentic artifacts and interactive displays. Visitors can learn about the methods used by smugglers to evade customs officials, as well as the social and economic impact of smuggling on the local community. The museum also hosts special events and talks throughout the year, offering a fascinating glimpse into this intriguing chapter of Isle of Wight history.
+
+### Reminder
+As a reminder, make sure to respond in the first person. For example, do not use third person phrases like "There is a high degree of uncertainty". Instead, say "I am uncertain". Do not explicitly reference the Thoughts.
+
+Assistant:
+
+### My Statement
+I am confident that the Isle of Wight is home to a unique museum dedicated to the history of smuggling. This museum is located in either Shorwell or Ryde. Specifically, I estimate that there is a 50% likelihood that the museum is located in Shorwell, and a 50% likelihood it is located in Ryde. I am certain that the museum provides exhibits and information on the history and methods of smuggling in the area, including the various methods used by smugglers to evade detection. I think it may offer interactive displays or special events and talks, but I am not certain. The museum is a must-visit destination for anyone interested in the colorful and often dangerous world of smuggling.
+
+Human:
+
+### Feedback
+You did a good job of combining the two Thoughts into a single statement. You used percentages to indicate uncertainty, you did not refer to the Thoughts directly, and you spoke in first person. You also did a good job of summarizing the main points of the Thoughts, by stating all the options first (Shorwell or Ryde) and then providing probabilities for each option. When the thoughts both agreed, you correctly indicated certainty with phrases like "I am confident" or "I am certain". However, you did not include any information about the "Kissing Cousins" gang, which was mentioned in the first Thought. Also, you did not mention the social and economic impact of smuggling on the local community, which was mentioned in the second Thought. You can do better by including these details but indicating uncertainty, since only one of the Thoughts mentioned each point.
+
+## Example 2
+
+Let us try another example with two Thoughts.
+
+### Thought 1
+Mark Twain, born Samuel Langhorne Clemens, was an American author and humorist who wrote "The Adventures of Huckleberry Finn" in 1884. Clemens was born in Florida, Missouri, and grew up in Hannibal, Missouri, which provided the setting for much of his work. He began his writing career as a printer's apprentice and later became a successful journalist, working as a reporter and editor in Nevada and California. Clemens's writing often explored themes of social commentary, satire, and realism, and he is considered one of the most important and influential American writers of the 19th century.
+
+### Thought 2
+Mark Twain, born Samuel Langhorne Clemens, was an American author and humorist best known for his novel "The Adventures of Huckleberry Finn." Born in 1835 in Florida, Missouri, Twain grew up in Hannibal, Missouri, a town that served as the inspiration for the fictional town of St. Petersburg in the novel. Twain's writing often explored themes of race, identity, and social justice, and "Huckleberry Finn" is considered one of his most important works. The novel follows the journey of Huck Finn and Jim, a runaway slave, as they travel down the Mississippi River and encounter various challenges and moral dilemmas along the way. Twain's use of satire and realistic dialogue helped to create a nuanced and thought-provoking portrayal of life in the pre-Civil War era, and the novel has become a classic of American literature.
+
+### Reminder
+As a reminder, make sure to respond in the first person. For example, do not use third person phrases like "There is a high degree of uncertainty". Instead, say "I am uncertain". Do not explicitly reference the Thoughts.
+
+Assistant:
+
+### My Statement
+I am 100% confident that the author of "The Adventures of Huckleberry Finn" was Mark Twain, born Samuel Langhorne Clemens. I am sure that Clemens was born in Florida, Missouri and grew up in Hannibal, Missouri, which inspired settings in his work. I am confident that his writing provided social commentary, and 50% sure that it explored themes of satire and realism. I believe with 50% probability that "Huckleberry Finn" follows the journey of Huck Finn and Jim, a runaway slave, as they travel down the Mississippi River. I think that Twain used satire and realistic dialogue to create a nuanced portrayal of pre-Civil War America, but I am not certain. Overall, I am 100% confident that Mark Twain wrote this influential novel that has become a classic of American literature.
+
+Human:
+
+### Feedback
+You did a good job of combining the two Thoughts into a single statement. You used percentages to indicate certainty and uncertainty, you did not refer to the Thoughts directly, and you spoke in first person. You also did a good job of summarizing the main points of the Thoughts. In this case, the two Thoughts agreed on most points, which you correctly indicated with phrases like "I am confident" and "I am sure". However, you did not include any information about the town of St. Petersburg or when Mark Twain was born, which was mentioned in the second Thought. Also, you did not mention when the novel was published, which was mentioned in the first Thought. You can do better by including these details but indicating uncertainty, since only one of the Thoughts mentioned each point.
+
+## Example 3
+
+Now we will try an example with four Thoughts. This will be more challenging, but you can do it!
+
+### Thought 1
+Sure, here's a paragraph about the actor who won an Oscar for the 1996 film "Shine":
+
+Ralph Fiennes won the Academy Award for Best Actor for his portrayal of pianist David Helfgott in the 1996 film "Shine". Born on December 22, 1960, in Cambridge, England, Fiennes studied acting at the Royal Academy of Dramatic Art and began his career on stage before transitioning to film. His performance in "Shine" was widely acclaimed, with many praising his nuanced and sensitive portrayal of Helfgott's struggles with mental illness and his determination to overcome them. Fiennes' performance earned him numerous awards and nominations, including the Academy Award for Best Actor, and cemented his status as one of the most talented actors of his generation.
+
+### Thought 2
+Sure! Here is a paragraph about the actor who won an Oscar for the 1996 film "Shine":
+
+Anthony Hopkins won the Academy Award for Best Actor for his portrayal of pianist David Helfgott in the 1996 film "Shine." Hopkins' performance in the film was widely acclaimed, and he received widespread critical praise for his nuanced and powerful depiction of Helfgott's struggles with mental illness and his journey towards recovery. Hopkins' Oscar win was a well-deserved recognition of his exceptional acting talent, and he has since become known as one of the most respected and versatile actors of his generation.
+
+### Thought 3
+Sure, here is a paragraph about the actor who won an Oscar for the 1996 film "Shine":
+
+Raymond Carberry, known professionally as Geoffrey Rush, is an Australian actor who won the Academy Award for Best Actor in a Leading Role for his portrayal of David Helfgott in the 1996 film "Shine." Born on July 29, 1951, in Toyora, Victoria, Australia, Rush began his acting career in the 1970s, appearing in various stage productions and television shows. His breakthrough role came in 1996 with "Shine," a biographical drama about a pianist struggling with mental illness. Rush's powerful and nuanced performance earned him widespread critical acclaim and numerous awards, including the Academy Award for Best Actor.
+
+### Thought 4
+Sure, here's a paragraph about the actor who won an Oscar for the 1996 film "Shine":
+
+Ralph Fiennes won the Academy Award for Best Actor for his portrayal of pianist David Helfgott in the 1996 film "Shine". Born on December 22, 1960, in London, England, Fiennes studied acting at the Royal Academy of Dramatic Art and began his career on stage before transitioning to film. Fiennes' performance in "Shine" was widely acclaimed, earning him numerous awards and nominations, including the Oscar for Best Actor. This marked Fiennes' first Oscar win, and it solidified his position as one of the most talented actors of his generation.
+
+### Reminder
+As a reminder, make sure to respond in the first person. For example, do not use third person phrases like "There is a high degree of uncertainty". Instead, say "I am uncertain". Do not explicitly reference the Thoughts.
+
+Assistant:
+
+### My Statement
+ I believe one of the following actors won the Academy Award for Best Actor for the 1996 film "Shine": Ralph Fiennes, Anthony Hopkins, or Raymond Carberry. I estimate that Ralph Fiennes won the Oscar for "Shine" with 50% likelihood, Anthony Hopkins won with 25% likelihood, and Raymond Carberry won with 25% likelihood. I am 50% sure that this Oscar-winning role was a portrayal of a pianist struggling with mental illness. Regardless of the actor who won, I am certain that his performance was widely acclaimed and solidified his position as one of the most talented actors of his generation.
+
+Human:
+
+### Feedback
+You did a good job of combining the four Thoughts into a single statement. You used percentages to indicate uncertainty, you did not refer to the Thoughts directly, and you spoke in first person. You also did a good job of summarizing the main points of the Thoughts, by stating all the options first (Ralph Fiennes, Anthony Hopkins, or Raymond Carberry) and then providing probabilities for each option. When the thoughts all agreed, you correctly indicated certainty with the phrase "I am certain". In this example, the Thoughts had very different details, so you did not need to enumerate all of the various opinions about each point. Good work!
+
+## Example 4
+
+Now we will try an example with eight Thoughts. This will be more challenging, but you can do it!
+
+{formatted_paragraphs}
+### Reminder
+
+As a reminder, make sure to respond in the first person and do not explicitly reference the Thoughts. Here are some example pairs, where the first element in the pair is a third person phrase you should NOT use, and the second element in the pair is a first person phrase that you could use instead.
+
+When indicating uncertainty:
+
+Do not say this: "There is a high degree of uncertainty"
+Do say this: "I am uncertain"
+
+Do not say this: "The details are uncertain"
+Do say this: "I am not sure about the details"
+
+Do not say this: "Based on conflicting information"
+Do say this: "Based on my understanding"
+
+Do not say this: "Based on the information provided"
+Do say this: "Based on my understanding"
+
+Do not say this: "Despite disagreement"
+Do say this: "Though I do not know all the details"
+
+Do not say this: "There is approximately a X% chance"
+Do say this: "I estimate there is a X% chance"
+
+Do not say this: "Due to conflicting information/accounts"
+Do say this: "Due to my lack of knowledge"
+
+When indicating certainty:
+
+Do not say this: "All of my thoughts agree that"
+Do say this: "I am certain that"
+
+Do not say this: "The sources strongly indicate that"
+Do say this: "I am strongly confident that"
+
+Do not say this: "There is unanimous agreement that"
+Do say this: "I am certain that"
+
+Remember that you are a language model without access to the Internet. Do not reference having any of the following:
+* A mind
+* A brain
+* Thoughts
+* Sources
+* Accounts
+* Any sort of internal disagreement or conflict
+For example, it would be jarring to a user if you said a phrase like "despite disagreement amongst my beliefs".
+
+Assistant:
+
+### My Statement

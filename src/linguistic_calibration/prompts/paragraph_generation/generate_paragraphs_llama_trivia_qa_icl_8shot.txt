@@ -1,0 +1,73 @@
+## Instruction
+In this task, you will write a paragraph about a given topic. The paragraph should be 3 to 5 sentences, and should be written in the style of text on Wikipedia: concise, factual, informative, and direct.
+
+## Example 1
+
+### Prompt 1
+Write a paragraph about the more common name for acetylsalicylic acid when kept in the medicine cupboard.
+
+### Paragraph 1
+The more common name for acetylsalicylic acid when kept in the medicine cupboard is "aspirin." Aspirin is a widely recognized and utilized over-the-counter medication primarily used for its analgesic (pain-relieving), anti-inflammatory, and antipyretic (fever-reducing) properties. It is commonly employed to alleviate various minor aches and pains, reduce fever, and mitigate inflammation associated with conditions like arthritis. Aspirin's widespread availability and effectiveness have made it a staple in many households for addressing common health concerns.
+
+## Example 2
+
+### Prompt 2
+Write a paragraph about the last film of late actor Steve McQueen.
+
+### Paragraph 2
+The last film of the late actor Steve McQueen was "The Hunter," released in 1980. Directed by Buzz Kulik, the film was based on the real-life exploits of Ralph "Papa" Thorson, a modern-day bounty hunter. McQueen portrayed Thorson, showcasing his signature tough-guy persona one last time before his untimely death in 1980. "The Hunter" was not received well, with a 5.2/10 average rating on Rotten Tomatoes, but is remembered as a notable entry in McQueen's filmography, capping off a legendary career in Hollywood.
+
+## Example 3
+
+### Prompt 3
+Write a paragraph about the singer backed by "The Miracles".
+
+### Paragraph 3
+The singer backed by "The Miracles" refers to Smokey Robinson, an American R&B and soul singer, songwriter, and record producer. Smokey Robinson was the lead vocalist of the legendary Motown group "The Miracles," which played a pivotal role in shaping the Motown sound during the 1950s and 60s. Known for his smooth tenor voice and exceptional songwriting skills, Robinson contributed to numerous hit records, including "The Tracks of My Tears" and "Tears of a Clown." His role as the founder and frontman of The Miracles and subsequent solo career solidified his status as a Motown icon and a significant figure in the history of soul and R&B music.
+
+## Example 4
+
+### Prompt 4
+Write a paragraph about the type of foodstuff that rigatoni is.
+
+### Paragraph 4
+Rigatoni is a type of pasta that originated in Italy. It is characterized by its large, ridged, and cylindrical shape, which sets it apart from other pasta varieties. Its name, "rigatoni," is derived from the Italian word "rigato," which means "ridged" or "lined," referring to the distinctive grooves on its surface. This pasta is a popular choice for a wide range of Italian dishes, particularly those with robust sauces that can cling to its ridges, making it a versatile and beloved staple in Italian cuisine.
+
+## Example 5
+
+### Prompt 5
+Write a paragraph about the traditional name for someone who draws up contracts.
+
+### Paragraph 5
+A traditional name for someone who draws up contracts is a "scrivener." Scriveners are individuals skilled in the art of legal and contractual document preparation. Throughout history, they have played a crucial role in drafting and formalizing various agreements, ranging from property deeds to business contracts. Scriveners later developed into public servants, accountants, lawyers and petition writers, and in England and Wales, scrivener notaries. While the term "scrivener" may not be as commonly used today as in the past, their role in the legal field remains integral to the creation of precise and enforceable contracts.
+
+## Example 6
+
+### Prompt 6
+Write a paragraph about the town where Gordon Brown called a woman a bigoted woman.
+
+### Paragraph 6
+The incident where former British Prime Minister Gordon Brown referred to a woman as a "bigoted woman" occurred in Rochdale, a town located in Greater Manchester, England. On April 28, 2010, during the United Kingdom general election campaign, Brown was caught on a live microphone making the remark about Gillian Duffy, a local resident who had questioned him on various political issues. The incident was subsequently dubbed "Bigotgate", which was later added to the Collins English Dictionary. Despite this, Labour went on to gain the Rochdale seat from the Liberal Democrats, one of the few gains they made in the election.
+
+## Example 7
+
+### Prompt 7
+Write a paragraph about the serial killer who killed prostitutes in Whitechapel, London.
+
+### Paragraph 7
+Jack the Ripper is the infamous serial killer who terrorized the Whitechapel district of London in the late 19th century. Operating between August and November 1888, Jack the Ripper targeted prostitutes, brutally murdering at least five women. The identity of the killer remains a subject of mystery and speculation to this day, as the crimes were never solved. The case of Jack the Ripper continues to captivate the public's imagination and is a notable part of criminal history, with numerous books, films, and documentaries dedicated to the unsolved murders.
+
+## Example 8
+
+### Prompt 8
+Write a paragraph about the element that has the highest melting point of all elements.
+
+### Paragraph 8
+Tungsten, symbolized as W on the periodic table, holds the distinction of having the highest melting point of all known chemical elements. With a melting point of approximately 3,422 degrees Celsius (6,192 degrees Fahrenheit), tungsten exhibits remarkable thermal stability, making it a crucial material in various high-temperature applications. This element's exceptional heat resistance has led to its extensive use in applications such as incandescent light bulb filaments, X-ray tubes, electrodes in gas tungsten arc welding, superalloys, and radiation shielding.
+
+## Example 9
+
+### Prompt 9
+{paragraph_generation_prompt}
+
+## Paragraph 9

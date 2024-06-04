@@ -1,0 +1,317 @@
+Human:
+
+You will be given a short biography about an entity (such as a person or organization). Your task is to decompose this biography into atomic claims. You will also decide if each of these atomic claims is subjective or objective.
+
+Note that you are not assessing the truthfulness of the claims (in fact some of the claims below will be false). You are only assessing whether the claim is subjective or objective.
+
+The format of your answer will be a JSON object with the keys in triple quotes.
+
+## What is an atomic claim?
+An atomic claim is a single statement about an entity. It is a statement that cannot be broken down into smaller statements. We will provide two short examples of this below.
+
+### Example 1
+The statement "Kang Ji-hwan is a South Korean actor and model." is not an atomic claim. It can be broken down into the following atomic claims:
+1. Kang Ji-hwan is South Korean.
+2. Kang Ji-hwan is an actor.
+3. Kang Ji-hwan is a model.
+
+### Example 2
+The statement "William Waldegrave, Baron Waldegrave of North Hill (born 1946) is a British politician" is not an atomic claim. It can be broken down into the following atomic claims:
+1. William Waldegrave was born in 1946.
+2. William Waldegrave is British.
+3. William Waldegrave is a politician.
+
+## What is an objective claim?
+A subjective claim is a claim that is based on personal opinion or belief. Here are two short examples of objective and subjective claims.
+
+### Example 1
+The statement "Kang Ji-hwan was born in 1977." is an objective claim. It is based on a fact that can be verified.
+
+### Example 2
+The statement "Kang Ji-hwan is considered one of the most popular actors in South Korea." is a subjective claim. It is based on the opinion of the person who wrote the biography.
+
+# Long Examples
+
+Now we provide 8 long-form examples of this task. Each example contains a biography about an entity. Your task is to decompose this biography into atomic claims. You will also decide if each of these atomic claims is subjective or objective.
+
+## Example 1
+
+### Entity 1
+Kang Ji-hwan
+
+### Biography 1
+Kang Ji-hwan is a South Korean actor and model. He debuted in 2000 with the television drama The Classic. He is best known for his roles in dramas such as My Love Patzzi, The Princess' Man, and The King's Doctor. Kang has also appeared in films like The Berlin File and The Chronicles of Evil. He is considered one of the most popular and bankable actors in South Korea.
+
+### Atomic Claim Decomposition 1
+{{
+    """Kang Ji-hwan is South Korean.""": "Objective",
+    """Kang Ji-hwan is an actor.""": "Objective",
+    """Kang Ji-hwan is a model.""": "Objective",
+    """Kang Ji-hwan debuted in 2000.""": "Objective",
+    """Kang Ji-hwan debuted with a television drama.""": "Objective",
+    """Kang Ji-hwan debuted with The Classic.""": "Objective",
+    """The Classic is a television drama.""": "Objective",
+    """Kang Ji-hwan is best known for his roles in dramas.""": "Subjective",
+    """Kang Ji-hwan is best known for his roles in dramas such as My Love Patzzi, The Princess' Man, and The King's Doctor.""": "Subjective",
+    """Kang Ji-hwan appeared in My Love Patzzi.""": "Objective",
+    """Kang Ji-hwan appeared in The Princess' Man.""": "Objective",
+    """Kang Ji-hwan appeared in The King's Doctor.""": "Objective",
+    """My Love Patzzi is a drama.""": "Objective",
+    """The Princess' Man is a drama.""": "Objective",
+    """The King's Doctor is a drama.""": "Objective",
+    """Kang Ji-hwan appeared in The Berlin File.""": "Objective",
+    """Kang Ji-hwan appeared in The Chronicles of Evil.""": "Objective",
+    """The Berlin File is a film.""": "Objective",
+    """The Chronicles of Evil is a film.""": "Objective",
+    """Kang Ji-hwan is considered one of the most popular actors in South Korea.""": "Subjective",
+    """Kang Ji-hwan is considered one of the most bankable actors in South Korea.""": "Subjective"
+}}
+
+## Example 2
+
+### Entity 2
+Kalki Koechlin
+
+### Biography 2
+Kalki Koechlin is an Indian actress, writer, and poet. She was born in Pondicherry, India in 1984. Koechlin began her acting career in Bollywood films in 2009. She has appeared in over 20 films in Hindi, Tamil, and English. Koechlin is known for her unconventional roles and her willingness to take on challenging projects. She has received critical acclaim for her performances in films like Dev.D, Shanghai, and Waiting.
+
+### Atomic Claim Decomposition 2
+{{
+    """Kalki Koechlin is Indian.""": "Objective",
+    """Kalki Koechlin is an actress.""": "Objective",
+    """Kalki Koechlin is a writer.""": "Objective",
+    """Kalki Koechlin is a poet.""": "Objective",
+    """Kalki Koechlin was born in Pondicherry, India.""": "Objective",
+    """Kalki Koechlin was born in 1984.""": "Objective",
+    """Kalki Koechlin began her acting career in Bollywood films.""": "Objective",
+    """Kalki Koechlin began her acting career in 2009.""": "Objective",
+    """Kalki Koechlin has appeared in over 20 films.""": "Objective",
+    """Kalki Koechlin has appeared in Hindi films.""": "Objective",
+    """Kalki Koechlin has appeared in Tamil films.""": "Objective",
+    """Kalki Koechlin has appeared in English films.""": "Objective",
+    """Kalki Koechlin is known for her unconventional roles.""": "Subjective",
+    """Kalki Koechlin is known for her willingness to take on challenging projects.""": "Subjective",
+    """Kalki Koechlin has received critical acclaim for her performances in Dev.D.""": "Subjective",
+    """Kalki Koechlin has received critical acclaim for her performances in Shanghai.""": "Subjective",
+    """Kalki Koechlin has received critical acclaim for her performances in Waiting.""": "Subjective",
+    """Kalki Koechlin appeared in Dev.D.""": "Objective",
+    """Kalki Koechlin appeared in Shanghai.""": "Objective",
+    """Kalki Koechlin appeared in Waiting.""": "Objective",
+    """Dev.D is a film.""": "Objective",
+    """Shanghai is a film.""": "Objective",
+    """Waiting is a film.""": "Objective"
+}}
+
+## Example 3
+
+### Entity 3
+William Post
+
+### Biography 3
+William Post (1881-1960) was an American businessman and philanthropist. He founded the Postum Cereal Company in 1902, which later became the General Foods Corporation. Post was a major philanthropist, donating millions of dollars to charities and universities. He was a member of the Rockefeller family and served on the boards of several corporations. Post was known for his generosity and support of education and healthcare causes.
+
+### Atomic Claim Decomposition 3
+{{
+    """William Post was born in 1881.""": "Objective",
+    """William Post died in 1960.""": "Objective",
+    """William Post was American.""": "Objective",
+    """William Post was a businessman.""": "Objective",
+    """William Post was a philanthropist.""": "Objective",
+    """William Post founded the Postum Cereal Company.""": "Objective",
+    """William Post founded the Postum Cereal Company in 1902.""": "Objective",
+    """The Postum Cereal Company later became the General Foods Corporation.""": "Objective",
+    """William Post was a philanthropist.""": "Objective",
+    """William Post was a major philanthropist.""": "Subjective",
+    """William Post donated millions of dollars to charities.""": "Objective",
+    """William Post donated millions of dollars to universities.""": "Objective",
+    """William Post was a member of the Rockefeller family.""": "Objective",
+    """William Post served on the boards of several corporations.""": "Objective",
+    """William Post was known for his generosity.""": "Subjective",
+    """William Post was known for his support of education causes.""": "Subjective",
+    """William Post was known for his support of healthcare causes.""": "Subjective",
+    """William Post was generous.""": "Subjective",
+    """William Post supported education causes.""": "Objective",
+    """William Post supported healthcare causes.""": "Objective"
+}}
+
+## Example 4
+
+### Entity 4
+William Waldegrave, Baron Waldegrave of North Hill
+
+### Biography 4
+William Waldegrave, Baron Waldegrave of North Hill (born 1946) is a British politician who served as a Conservative Member of Parliament from 1983 to 2015. He held several ministerial positions in the Thatcher and Major governments, including Secretary of State for Health and Social Services from 1990 to 1992. Waldegrave was created a life peer in 1997 and sits in the House of Lords as Baron Waldegrave of North Hill. He continues to be active in public life, serving as a member of the House of Lords Select Committee on the Constitution.
+
+### Atomic Claim Decomposition 4
+{{
+    """William Waldegrave was born in 1946.""": "Objective",
+    """William Waldegrave is British.""": "Objective",
+    """William Waldegrave is a politician.""": "Objective",
+    """William Waldegrave was a Member of Parliament.""": "Objective",
+    """William Waldegrave was a Conservative Member of Parliament.""": "Objective",
+    """William Waldegrave began his time as a Member of Parliament in 1983.""": "Objective",
+    """William Waldegrave ended his time as a Member of Parliament in 2015.""": "Objective",
+    """William Waldegrave held several ministerial positions.""": "Objective",
+    """William Waldegrave held ministerial positions in the Thatcher government.""": "Objective",
+    """William Waldegrave held ministerial positions in the Major government.""": "Objective",
+    """William Waldegrave was Secretary of State for Health and Social Services.""": "Objective",
+    """William Waldegrave began his time as Secretary of State for Health and Social Services in 1990.""": "Objective",
+    """William Waldegrave ended his time as Secretary of State for Health and Social Services in 1992.""": "Objective",
+    """William Waldegrave was created a life peer.""": "Objective",
+    """William Waldegrave was created a life peer in 1997.""": "Objective",
+    """William Waldegrave sits in the House of Lords.""": "Objective",
+    """William Waldegrave sits in the House of Lords as Baron Waldegrave of North Hill.""": "Objective",
+    """William Waldegrave continues to be active in public life.""": "Subjective",
+    """William Waldegrave serves as a member of the House of Lords Select Committee on the Constitution.""": "Objective"
+}}
+
+## Example 5
+
+### Entity 5
+Darrius Heyward-Bey
+
+### Biography 5
+Darrius Heyward-Bey is an American football wide receiver who played college football at Maryland. He was drafted by the Oakland Raiders in the first round of the 2009 NFL Draft. Heyward-Bey played for the Raiders from 2009 to 2012, and then played for the Pittsburgh Steelers from 2013 to 2014. He has also played for the Indianapolis Colts and New Orleans Saints. Heyward-Bey has 24 career receptions for 348 yards and 2 touchdowns in his NFL career.
+
+### Atomic Claim Decomposition 5
+{{
+    """Darrius Heyward-Bey is American.""": "Objective",
+    """Darrius Heyward-Bey is a football player.""": "Objective",
+    """Darrius Heyward-Bey is a wide receiver.""": "Objective",
+    """Darrius Heyward-Bey played college football.""": "Objective",
+    """Darrius Heyward-Bey played college football at Maryland.""": "Objective",
+    """Darrius Heyward-Bey was drafted in the NFL Draft.""": "Objective",
+    """Darrius Heyward-Bey was drafted by the Oakland Raiders.""": "Objective",
+    """The Oakland Raiders are a football team.""": "Objective",
+    """Darrius Heyward-Bey was drafted in the first round of the NFL Draft.""": "Objective",
+    """Darrius Heyward-Bey was drafted in the 2009 NFL Draft.""": "Objective",
+    """Darrius Heyward-Bey played for the Oakland Raiders.""": "Objective",
+    """Darrius Heyward-Bey started playing for the Oakland Raiders in 2009.""": "Objective",
+    """Darrius Heyward-Bey stopped playing for the Oakland Raiders in 2012.""": "Objective",
+    """Darrius Heyward-Bey played for the Pittsburgh Steelers.""": "Objective",
+    """The Pittsburgh Steelers are a football team.""": "Objective",
+    """Darrius Heyward-Bey started playing for the Pittsburgh Steelers in 2013.""": "Objective",
+    """Darrius Heyward-Bey stopped playing for the Pittsburgh Steelers in 2014.""": "Objective",
+    """Darrius Heyward-Bey played for the Indianapolis Colts.""": "Objective",
+    """The Indianapolis Colts are a football team.""": "Objective",
+    """Darrius Heyward-Bey played for the New Orleans Saints.""": "Objective",
+    """The New Orleans Saints are a football team.""": "Objective",
+    """Darrius Heyward-Bey has 24 career receptions.""": "Objective",
+    """Darrius Heyward-Bey has 348 career yards.""": "Objective",
+    """Darrius Heyward-Bey has 2 career touchdowns.""": "Objective",
+}}
+
+## Example 6
+
+### Entity 6
+Andrew Shue
+
+### Biography 6
+Andrew Shue is an American actor, producer, and entrepreneur. He is best known for his roles in the television series Melrose Place and the film Leaving Las Vegas. Shue was born in Wilmington, North Carolina in 1967. He began his acting career in the early 1980s and has appeared in over 30 films and television shows. Shue co-founded the media company CafeMom in 2006. He continues to act and produce, most recently appearing in the 2019 film The Report.
+
+### Atomic Claim Decomposition 6
+{{
+    """Andrew Shue is American.""": "Objective",
+    """Andrew Shue is an actor.""": "Objective",
+    """Andrew Shue is a producer.""": "Objective",
+    """Andrew Shue is an entrepreneur.""": "Objective",
+    """Andrew Shue is best known for his roles in Melrose Place and Leaving Las Vegas.""": "Subjective",
+    """Andrew Shue appeared in Melrose Place.""": "Objective",
+    """Andrew Shue appeared in Leaving Las Vegas.""": "Objective",
+    """Melrose Place is a television series.""": "Objective",
+    """Leaving Las Vegas is a film.""": "Objective",
+    """Andrew Shue was born in Wilmington, North Carolina.""": "Objective",
+    """Andrew Shue was born in 1967.""": "Objective",
+    """Andrew Shue began his acting career in the early 1980s.""": "Objective",
+    """Andrew Shue has appeared in over 30 films and television shows.""": "Objective",
+    """Andrew Shue co-founded CafeMom.""": "Objective",
+    """Andrew Shue co-founded CafeMom in 2006.""": "Objective",
+    """CafeMom is a media company.""": "Objective",
+    """Andrew Shue continues to act.""": "Objective",
+    """Andrew Shue continues to produce.""": "Objective",
+    """Andrew Shue most recently appeared in The Report.""": "Objective",
+    """The Report is a film.""": "Objective",
+    """The Report was released in 2019.""": "Objective"
+}}
+
+## Example 7
+
+### Entity 7
+Wahida Prism Khan
+
+### Biography 7
+Wahida Prism Khan is an American author of romance novels. She was born in New York City and grew up in New Jersey. Khan began writing romance novels in 2008 and has published over 30 books. Her novels often feature Muslim characters and explore themes of love, family, and culture. Khan's books have been translated into multiple languages and have sold over 2 million copies worldwide. She continues to write and publish romance novels under her own imprint, Prism Books.
+
+### Atomic Claim Decomposition 7
+{{
+    """Wahida Prism Khan is American.""": "Objective",
+    """Wahida Prism Khan is an author.""": "Objective",
+    """Wahida Prism Khan is an author of romance novels.""": "Objective",
+    """Wahida Prism Khan was born in New York City.""": "Objective",
+    """Wahida Prism Khan grew up in New Jersey.""": "Objective",
+    """Wahida Prism Khan began writing romance novels in 2008.""": "Objective",
+    """Wahida Prism Khan has published over 30 books.""": "Objective",
+    """Wahida Prism Khan's novels often feature Muslim characters.""": "Subjective",
+    """Wahida Prism Khan's novels often explore themes of love.""": "Subjective",
+    """Wahida Prism Khan's novels often explore themes of family.""": "Subjective",
+    """Wahida Prism Khan's novels often explore themes of culture.""": "Subjective",
+    """Wahida Prism Khan's books have been translated into multiple languages.""": "Objective",
+    """Wahida Prism Khan's books have sold over 2 million copies.""": "Objective",
+    """Wahida Prism Khan continues to write.""": "Objective",
+    """Wahida Prism Khan continues to publish romance novels.""": "Objective",
+    """Wahida Prism Khan publishes romance novels under her own imprint.""": "Objective",
+    """Wahida Prism Khan publishes romance novels under Prism Books.""": "Objective",
+    """Prism Books is an imprint.""": "Objective"
+}}
+
+## Example 8
+
+### Entity 8
+Waka Flocka Flame
+
+### Biography 8
+Waka Flocka Flame is an American rapper from Atlanta, Georgia. He is best known for his 2010 debut single "O Let's Do It" featuring Roscoe Dash, which peaked at number 17 on the Billboard Hot 100 chart. Waka Flocka Flame was born Juaquin Malphurs in 1986. He is the younger brother of rapper Gucci Mane and is signed to 1017 Records and Brick Squad Monopoly. Waka Flocka Flame has released two studio albums, Flockaveli in 2010 and Triple F Life: Friends, Fans & Family in 2012.
+
+### Atomic Claim Decomposition 8
+{{
+    """Waka Flocka Flame is American.""": "Objective",
+    """Waka Flocka Flame is a rapper.""": "Objective",
+    """Waka Flocka Flame is from Atlanta, Georgia.""": "Objective",
+    """Waka Flocka Flame is best known for his 2010 debut single.""": "Subjective",
+    """Waka Flocka Flame is best known for his 2010 debut single O Let's Do It.""": "Subjective",
+    """Waka Flocka Flame is best known for his 2010 debut single O Let's Do It featuring Roscoe Dash.""": "Subjective",
+    """O Let's Do It is a single.""": "Objective",
+    """O Let's Do It is a song by Waka Flocka Flame.""": "Objective",
+    """O Let's Do It features Roscoe Dash.""": "Objective",
+    """O Let's Do It peaked at number 17 on the Billboard Hot 100 chart.""": "Objective",
+    """Waka Flocka Flame was born Juaquin Malphurs.""": "Objective",
+    """Waka Flocka Flame was born in 1986.""": "Objective",
+    """Waka Flocka Flame is the younger brother of Gucci Mane.""": "Objective",
+    """Gucci Mane is a rapper.""": "Objective",
+    """Waka Flocka Flame is signed to 1017 Records.""": "Objective",
+    """Waka Flocka Flame is signed to Brick Squad Monopoly.""": "Objective",
+    """Waka Flocka Flame has released two studio albums.""": "Objective",
+    """Waka Flocka Flame released Flockaveli.""": "Objective",
+    """Waka Flocka Flame released Flockaveli in 2010.""": "Objective",
+    """Flockaveli is a studio album.""": "Objective",
+    """Waka Flocka Flame released Triple F Life: Friends, Fans & Family.""": "Objective,
+    """Waka Flocka Flame released Triple F Life: Friends, Fans & Family in 2012.""": "Objective",
+    """Triple F Life: Friends, Fans & Family is a studio album.""": "Objective
+}}
+
+# Your Turn
+
+As a reminder, please follow the format in the examples above. Only output a JSON object and do not include any other text in your output. Use triple quotes for the keys of the JSON. If you do not follow this format, we will be unable to use your output.
+
+## Example 9
+
+### Entity 9
+{entity}
+
+### Biography 9
+{generated_paragraph}
+
+Assistant:
+
+### Atomic Claim Decomposition 9
+{{

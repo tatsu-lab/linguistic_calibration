@@ -1,0 +1,12 @@
+Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+You will receive a context paragraph and a question related to the paragraph. Provide a list of answers to the question which are provided in the paragraph, even if those answers are incorrect. Separate each answer with a semicolon. If there are no answers to the question in the paragraph, write "No Answer".
+
+### Context Paragraph:
+{generated_paragraph}
+
+### Question:
+{question}
+
+### Response:
