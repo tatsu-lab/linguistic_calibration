@@ -58,7 +58,7 @@ pip install -v --disable-pip-version-check --no-cache-dir --no-build-isolation -
 pip install -v --disable-pip-version-check --no-cache-dir --no-build-isolation --global-option="--cpp_ext" --global-option="--cuda_ext" ./
 ```
 
-Lastly, you should set constants in [linguistic_calibration/constants.py](linguistic_calibration/constants.py) to point to the correct paths for your cache directories, checkpoints, etc.
+Lastly, you should set constants in [linguistic_calibration/constants.py](src/linguistic_calibration/constants.py) to point to the correct paths for your cache directories, checkpoints, etc.
 
 ## Training Framework
 
@@ -177,7 +177,7 @@ python pretrained_models/recover_model_weights.py \
   --models-save-dir=<dir_to_save_all_models>
 ```
 
-Then, you should set CHECKPOINT_CACHE_DIR in [linguistic_calibration/constants.py](linguistic_calibration/constants.py) to `<dir_to_save_all_models>`.
+Then, you should set CHECKPOINT_CACHE_DIR in [linguistic_calibration/constants.py](src/linguistic_calibration/constants.py) to `<dir_to_save_all_models>`.
 
 Or, to download a specific model checkpoint, select a model name from the list
 * `lc-sft`
